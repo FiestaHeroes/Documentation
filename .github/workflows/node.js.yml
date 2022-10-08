@@ -28,4 +28,5 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
-    - run: cp -R build /var/www/doc
+    - run: rm -r /var/www/doc/*
+    - run: cp -R build/* /var/www/doc
