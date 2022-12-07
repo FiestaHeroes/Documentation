@@ -60,12 +60,12 @@ const config = {
                 alt: 'Fiesta Heroes Logo',
                 src: 'img/favicon.png',
             },
-            items: [{
+            items: [/**{
                     type: 'doc',
                     docId: 'intro',
                     position: 'left',
                     label: 'Doc',
-                },
+                },*/
                 {
                     href: 'https://fiestaheroes.com/',
                     label: 'Homepage',
