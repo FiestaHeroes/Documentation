@@ -59,12 +59,8 @@ TW2008:
 ```
 The document will have detailed comments, and should be self-explanatory. Only edit the IP Addresses with the "PUBLIC_IP" comment at the end. If it says "LOCALHOST", leave it localhost. Keep the IP Addresses within the quotations.
 
-<br>
-
 Lastly, configure the "ODBC_INFO" sections. The document has detailed comments, and should be self-explanatory.
 > **Note:**
 > Make sure your Microsoft SQL Server authentication supports, mix mode. Below is a link on how-to enable if you don't.
 
-
-[Enable Mixed Mode Authentication for SQL Server.](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
-
+[Enable Mixed Mode Authentication for SQL Server](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
