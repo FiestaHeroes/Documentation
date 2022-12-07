@@ -65,4 +65,6 @@ Lastly, configure the "ODBC_INFO" sections. The document has detailed comments, 
 > **Note:**
 > Make sure your Microsoft SQL Server authentication supports, mix mode. Below is a link on how-to enable if you don't.
 
+
 [Enable Mixed Mode Authentication for SQL Server.](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
+
