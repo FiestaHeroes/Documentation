@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Server Installation and Configuration
+# Server Setup
 
-## Requirements:
+# Requirements:
 
 First, download your desired server file set from our [GitHub](https://github.com/FiestaHeroes/). We currently supporting the following sets:
 * [NA2016](https://github.com/FiestaHeroes/NA2016/) - Fiesta Online (Gamigo) files.
@@ -14,7 +14,8 @@ First, download your desired server file set from our [GitHub](https://github.co
 Make sure your server (local or public) supports the following requirements.
 ```bash
 # Operating System
-Windows Server: 2008(R2), 2012(R2), 2016, 2019 and 2022
+Windows Server: 2016, 2019 and 2022
+Windows: 10 and 11.
 
 # Server Specifications (Minimum Requirements)
 RAM: 16GB
@@ -23,11 +24,14 @@ DISK: 80GB
 ```
 
 > **Note:**
-> You can use newer MSSQL server installations as well. But, it **must** be equal or greater than 2019.
+> You can use newer Microsoft SQL server installations as well. But, it **must** be equal or greater than 2019.
 
 Make sure you have Microsoft SQL Server properly installed and configured before continuing. You can directly download the installations from the following links:
 *	[Microsoft SQL Server 2019](https://go.microsoft.com/fwlink/p/?linkid=866658)
 *	[Microsoft SQL Server Management Studio](https://aka.ms/ssmsfullsetup)
+
+> **Note:**
+> When installing your Microsoft SQL Server, **make sure you have enabled mix mode.** This is needed when setting up your ServerInfo.txt config. Keep track of your username (**sa** by default) and your password.
 
 # Server Installation:
 This part should be reasonably easy, if you have Microsoft SQL Server correctly setup. We will be utilizing our PowerShell scripts. Make sure you're in the **/Server/** directory.
@@ -61,6 +65,6 @@ The document will have detailed comments, and should be self-explanatory. Only e
 
 Lastly, configure the "ODBC_INFO" sections. The document has detailed comments, and should be self-explanatory.
 > **Note:**
-> Make sure your Microsoft SQL Server authentication supports, mix mode. Below is a link on how-to enable if you don't.
+> If you forgot to enable mix mode, below is a link on how-to enable it.
 
 [Enable Mixed Mode Authentication for SQL Server](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
