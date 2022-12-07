@@ -5,7 +5,7 @@
 ----------------------------------------------
 
 --- Return type for AIScripts.
----@class AIType
+---@class ReturnAI
 --- Returning this value will stop the zone from
 --- running any custom logic for the mob. It will
 --- be fully controlled by lua.
@@ -17,7 +17,7 @@ ReturnAI = {}
 ReturnAI.END = 1
 ReturnAI.CPP = 2
 
---- Types for objects
+--- Types for objects.
 ---@class ObjectType
 ---@field Invalid integer
 ---@field Flag integer
@@ -64,6 +64,7 @@ ObjectType.Max = 13
 ---@field Archer integer
 ---@field Mage integer
 ---@field Joker integer
+--- Needs to be manually added to common.lua
 ---@field Sentinel integer
 BasicClass = {}
 BasicClass.None = 0
@@ -72,10 +73,10 @@ BasicClass.Cleric = 6
 BasicClass.Archer = 11
 BasicClass.Mage = 16
 BasicClass.Joker = 21
-BasicClass.Joker = 26
+BasicClass.Sentinel = 26
 
 ---
----@class EffectMsgType
+---@class EFFECT_MSG_TYPE
 ---@field EMT_WIN integer
 ---@field EMT_LOSE integer
 ---@field EMT_DRAW integer
@@ -108,14 +109,14 @@ EFFECT_MSG_TYPE.EMT_SOCCER_KICK_OFF = 12
 EFFECT_MSG_TYPE.EMT_SOCCER_GOAL = 13
 EFFECT_MSG_TYPE.EMT_WATER_START = 14
 
----@class CameraState
----@field None integer
----@field Moving integer
+---@class CAMERA_STATE
+---@field NONE integer
+---@field MOVING integer
 CAMERA_STATE = {}
 CAMERA_STATE.NONE = 0
 CAMERA_STATE.MOVING = 1
 
----@class KqTeam
+---@class KQ_TEAM
 ---@field RED integer
 ---@field BLUE integer
 --- Max value for this field.\
@@ -736,12 +737,12 @@ end
 ---@field Dex integer
 ---@field Int integer
 ---@field End integer
-Stats = {}
-Stats.Str = 1
-Stats.Con = 2
-Stats.Dex = 3
-Stats.Int = 4
-Stats.End = 5
+StatsEnum = {}
+StatsEnum.Str = 1
+StatsEnum.Con = 2
+StatsEnum.Dex = 3
+StatsEnum.Int = 4
+StatsEnum.End = 5
 
 --- Classes Enum. Use this to compare against the
 --- return value of functions returning this type.\
@@ -808,7 +809,7 @@ Classes.Savior = 27
 ----------------------------------------------
 -------------------- Hook --------------------
 ----------------------------------------------
------------------- Functions -----------------
+------------------ HFunctions -----------------
 ----------------------------------------------
 
 --- **Hook only**\
