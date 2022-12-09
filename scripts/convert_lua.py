@@ -6,20 +6,20 @@ import re
 lua_lines = open("../static/files/fiesta.lua").readlines()
 
 # Remove previously auto generated markdown if it exists
-if os.path.exists("../docs/lua.md"):
-    os.remove("../docs/lua.md")
+if os.path.exists("../docs/lua/documentation.md"):
+    os.remove("../docs/lua/documentation.md")
 
 # Create new markdown
-md_file = open("../docs/lua.md", "w")
+md_file = open("../docs/lua/documentation.md", "w")
 
 # Add Title
-md_file.write("# Fiesta Lua\n")
+md_file.write("# Documentation\n")
 
 # Add hint that file is auto generated
-md_file.write("""<!---
+md_file.write("""\n<!---
 This file is auto-generated. Do not attempts to modify this file directly.
 Script is located under scripts/convert_lua.py
--->
+-->\n
 """)
 
 # lua file is split into multiple sections
@@ -42,10 +42,7 @@ def UpdateSection(line: str):
         return Section.GENERAL_CLASSES
 
     if "- Structures -" in line:
-
-        md_file.write("## Hook Types\n\n")
-
-        return Section.GENERAL_CLASSES
+        return Section.NO_SECTION
 
     if "- Damage Board -" in line:
         return Section.NO_SECTION
@@ -67,12 +64,7 @@ def UpdateSection(line: str):
             return Section.GENERAL_FUNCTIONS
 
     if "- HFunctions -" in line:
-
-        md_file.write("<br></br>\n\n")
-        md_file.write("## Hook Functions\n\n")   
-        md_file.write("<hr></hr>\n\n")   
-
-        return Section.GENERAL_FUNCTIONS
+        return Section.NO_SECTION
 
     return section
 
@@ -141,7 +133,7 @@ def WriteGeneralFunctions(line: str):
 
     if line.startswith("end"):
         # Write function
-        md_file.write(f"### { GeneralFunction.Name }\n\n")
+        md_file.write(f"### { GeneralFunction.Name }\n")
 
         temp_desc = GeneralFunction.Description.replace("\\", "")
 

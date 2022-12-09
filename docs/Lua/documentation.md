@@ -1,8 +1,10 @@
-# Fiesta Lua
+# Documentation
+
 <!---
 This file is auto-generated. Do not attempts to modify this file directly.
 Script is located under scripts/convert_lua.py
 -->
+
 ## Normal Types
 
 ### ReturnAI
@@ -103,7 +105,6 @@ BaseClass Enum. Use this to compare against the return value of functions return
 
 ### cExecCheck
 
-
 Needs to be first call in **every** function.
 Tells the server the last function called for error logging.
 
@@ -127,7 +128,6 @@ end
 <hr></hr>
 
 ### cMobRegen_XY
-
 
 Spawns a mob at position X Y.
 
@@ -159,7 +159,6 @@ local mobHandle = cMobRegen_XY("Rou", "Slime", 5000, 5000, 0)
 
 ### cMobRegen_Circle
 
-
 Spawns a mob in a circle specified through X Y and Radius.
 
 ```lua  title='Definition'
@@ -190,7 +189,6 @@ local mobNumber = cMobRegen_Circle("Rou", "Slime", 5000, 5000, 100)
 
 ### cObjectLocate
 
-
 Returns the X and Y of the Handle.
 
 ```lua  title='Definition'
@@ -217,7 +215,6 @@ local playerX, playerY = cObjectLocate(player)
 <hr></hr>
 
 ### cObjectCount
-
 
 Gets the amount of the specificed Object Type.
 
@@ -246,7 +243,6 @@ local mobNumber = cObjectCount("Rou", ObjectType.Mob)
 
 ### cRandomInt
 
-
 Generates a random integer between two values.
 
 ```lua  title='Definition'
@@ -274,7 +270,6 @@ local random = cRandomInt(1, 10)
 
 ### cCurSec
 
-
 Gets current time in seconds.
 
 ```lua  title='Definition'
@@ -296,7 +291,6 @@ local time = cCurSec()
 
 ### cCurrentSecond
 
-
 Gets current time in seconds.
 
 ```lua  title='Definition'
@@ -317,7 +311,6 @@ local time = cCurrentSecond()
 <hr></hr>
 
 ### cIsObjectDead
-
 
 Checks if Object is dead.
 
@@ -344,7 +337,6 @@ cIsObjectDead(player)
 <hr></hr>
 
 ### cAIScriptSet
-
 
 Copies the script from the object associated with handle to
 the object associated with HandleTarget.
@@ -374,7 +366,6 @@ cAIScriptSet(mobHandle, mobHandle2)
 
 ### cAIScriptSet
 
-
 Resets the script of the object associated with the handle.
 
 ```lua  title='Definition'
@@ -400,7 +391,6 @@ cAIScriptSet(mobHandle)
 <hr></hr>
 
 ### cSetAIScript
-
 
 Sets script on an object associated with the handle.
 
@@ -429,7 +419,6 @@ cSetAIScript("ID/AdlF/AdlF", mobHandle)
 
 ### cNPCVanish
 
-
 Vanishes NPC associated with the Handle.
 
 ```lua  title='Definition'
@@ -450,7 +439,6 @@ cNPCVanish(npcHandle)
 <hr></hr>
 
 ### cNoticeString
-
 
 Sends notices on map.
 
@@ -473,7 +461,6 @@ local lot = cNoticeString("Rou", "Map wide notice")
 <hr></hr>
 
 ### cScriptMessage
-
 
 Sends notices on map from ScriptMsg.shn
 Refer to printf format strings on how strings
@@ -502,7 +489,6 @@ cScriptMessage("Rou", 1, "Success")
 
 ### cScriptMessage_Obj
 
-
 Sends a notice to a player from ScriptMsg.SHN
 Refer to printf format strings on how strings
 are formatted and how to pass extra paramters
@@ -529,7 +515,6 @@ cScriptMessage_Obj(playerHandle, 1, "Success")
 <hr></hr>
 
 ### cInvenItemDestroy
-
 
 Destroys the specified amount of an item in the
 players inventory.
@@ -560,7 +545,6 @@ cInvenItemDestroy(playerHandle, 1, 1)
 
 ### cGetItemLot
 
-
 Returns the amount of an item in a specified player's inventory.
 
 ```lua  title='Definition'
@@ -589,7 +573,6 @@ local lot, isBlocked = cGetItemLot(playerHandle, 1)
 
 ### cGetCurMapIndex
 
-
 Gets the Map Index of a player.
 
 ```lua  title='Definition'
@@ -616,7 +599,6 @@ local mapName = cGetCurMapIndex(playerHandle)
 
 ### cGetPlayerName
 
-
 Returns the name of a player.
 
 ```lua  title='Definition'
@@ -642,7 +624,6 @@ local playerName = cGetPlayerName(playerHandle)
 <hr></hr>
 
 ### cAIScriptFunc
-
 
 Set callback function for special events on NPCs.
 - Possible Events and callback arguments:
@@ -684,7 +665,6 @@ cAIScriptFunc(Mob, "NPCClick", "OnNPCClicked" )
 
 ### cNPCMenuOpen
 
-
 Opens the dialogue menu of an NPC to the selected player.
 
 ```lua  title='Definition'
@@ -711,7 +691,6 @@ cNPCMenuOpen(npcHandle, PlayerHandle)
 <hr></hr>
 
 ### cVanishAll
-
 
 Kills all of a specified MobINX in a Map.
 
@@ -740,7 +719,6 @@ cVanishAll("Rou", "Slime")
 
 ### cObjectHP
 
-
 Returns the current HP and Max HP of an object.
 
 ```lua  title='Definition'
@@ -768,7 +746,6 @@ local CurHP, MaxHP = cObjectHP(mob)
 
 ### cGroupRegenInstance
 
-
 Activates Regen for an Instance.
 
 ```lua  title='Definition'
@@ -795,7 +772,6 @@ cGroupRegenInstance("AdlF", "AdlF_01_SP01")
 <hr></hr>
 
 ### cSetAbstate
-
 
 Sets an Abstate on a Handle.
 
@@ -826,7 +802,6 @@ cSetAbstate(player, "StaImmortal", 1, 2000000000)
 
 ### cLinkTo
 
-
 Teleports player to given location.
 
 ```lua  title='Definition'
@@ -856,7 +831,6 @@ cLinkTo(player, "Rou", 5000, 5000)
 
 ### cGetLevel
 
-
 Returns the players level.
 
 ```lua  title='Definition'
@@ -883,7 +857,6 @@ local playerLevel = cGetLevel(player)
 <hr></hr>
 
 ### cSetFieldScript
-
 
 Sets the script for the map.
 
@@ -912,7 +885,6 @@ cSetFieldScript(MapIndex, "ID/BH_Karen/BH_Karen_P")
 
 ### cKillObject
 
-
 Kills mob instantly. Kill gets creditet to player.
 
 ```lua  title='Definition'
@@ -935,7 +907,6 @@ cKillObject(mobHandle, playerHandle)
 
 ### cKillObject
 
-
 Kills mob instantly.
 
 ```lua  title='Definition'
@@ -956,7 +927,6 @@ cKillObject(mobHandle)
 <hr></hr>
 
 ### cIndunRankResult
-
 
 Show damage ranking.
 
@@ -981,7 +951,6 @@ cIndunRankResult(Field, 100, PlyList)
 
 ### cTimer
 
-
 Start timer for all player on map that ticks down.
 To make the timer disappear call again with Time = 0.
 
@@ -1004,7 +973,6 @@ cTimer(MapIndex, 600)
 <hr></hr>
 
 ### cTimer_Obj
-
 
 Start timer for a specific player that ticks down.
 To make the timer disappear call again with Time = 0.
@@ -1029,7 +997,6 @@ cTimer_Obj(Handle, 600)
 
 ### cTimerEnd
 
-
 Ends timer for a specific player.
 
 ```lua  title='Definition'
@@ -1051,7 +1018,6 @@ cTimer(MapIndex, 600)
 <hr></hr>
 
 ### cObjectType
-
 
 Get ObjectType of the given handle.
 
@@ -1079,7 +1045,6 @@ end
 <hr></hr>
 
 ### cCastTeleport
-
 
 Teleports object to a specific coordinate on the same map.
 Be careful when using on players.
@@ -1112,7 +1077,6 @@ cCastTeleport(pPlayer, "SpecificCoord", 5000, 5000)
 
 ### cCastTeleport
 
-
 Teleports object to a random place on the map.
 Be careful when using on players.
 Other objects only get updated when they move.
@@ -1142,7 +1106,6 @@ cCastTeleport(pPlayer, "AnyWhere")
 
 ### cResetAbstate
 
-
 Reset abstate on object.
 
 ```lua  title='Definition'
@@ -1169,7 +1132,6 @@ cResetAbstate(MobHandle, "StaImmortal")
 <hr></hr>
 
 ### cGetNearObjListByCoord
-
 
 Get a list of all objects in a radius around a coord.
 
@@ -1203,7 +1165,6 @@ local players = { cGetNearObjListByCoord(Var["MapIndex"], 5000, 5000, 1000, Obje
 
 ### cSetAbstate_Range
 
-
 Set Abstate in range for all objects of a specific type.
 
 ```lua  title='Definition'
@@ -1235,7 +1196,6 @@ cSetAbstate_Range(MobHandle, 1000, ObjectType.Mob, "StaImmortal", 1, 20000)
 
 ### cCameraMove
 
-
 Set camera for all objects on map.
 
 ```lua  title='Definition'
@@ -1263,7 +1223,6 @@ cCameraMove(Var["MapIndex"], 5838, 12883, 0, 30, 600, CAMERA_STATE.MOVING)
 
 ### cGetPlayerList
 
-
 Get a list of all players on a map.
 
 ```lua  title='Definition'
@@ -1289,7 +1248,6 @@ local playerlist = { cGetPlayerList(Var["MapIndex"]) }
 <hr></hr>
 
 ### cDoorAction
-
 
 Open or close door. Valid values are "close" or "open".
 
@@ -1318,7 +1276,6 @@ cDoorAction(Var["Door1"], "Door1", "close")
 <hr></hr>
 
 ### cDoorBuild
-
 
 Build a door object.
 
@@ -1350,7 +1307,6 @@ local doorHandle = cDoorBuild(Var["MapIndex"], "Barrier02", 5311, 3321, 90, 1000
 <hr></hr>
 
 ### cFieldScriptFunc
-
 
 Set callback function for special events on Map.
     - "MapLogin" -> func( MapIndex, PlyHandle )
@@ -1385,840 +1341,6 @@ cFieldScriptFunc(Var["MapIndex"], "RankingValue", "Ranking")
 
 <hr></hr>
 
-## Hook Types
-
-### PlayerList
-
-| Name | Type | Description | Value |
-|------|------|-------------|-------|
-| PlyDmg | PlayerDamage[] | - | - |
-
-### StatsEnum
-
-**Hook only**\ Enum for different stat types.\ Add this to common.lua
-
-| Name | Type | Description | Value |
-|------|------|-------------|-------|
-| Str | integer | - | 1 |
-| Con | integer | - | 2 |
-| Dex | integer | - | 3 |
-| Int | integer | - | 4 |
-| End | integer | - | 5 |
-
-### Classes
-
-Classes Enum. Use this to compare against the return value of functions returning this type.\ Add this to common.lua
-
-| Name | Type | Description | Value |
-|------|------|-------------|-------|
-| None | integer | - | 0 |
-| Fighter | integer | - | 1 |
-| CleverFighter | integer | - | 2 |
-| Warrior | integer | - | 3 |
-| Gladiator | integer | - | 4 |
-| Knight | integer | - | 5 |
-| Cleric | integer | - | 6 |
-| HighCleric | integer | - | 7 |
-| Paladin | integer | - | 8 |
-| HolyKnight | integer | - | 9 |
-| Guardian | integer | - | 10 |
-| Archer | integer | - | 11 |
-| HawkArcher | integer | - | 12 |
-| Scout | integer | - | 13 |
-| SharpShooter | integer | - | 14 |
-| Ranger | integer | - | 15 |
-| Mage | integer | - | 16 |
-| WizMage | integer | - | 17 |
-| Enchanter | integer | - | 18 |
-| Warlock | integer | - | 19 |
-| Wizard | integer | - | 20 |
-| Joker | integer | - | 21 |
-| Chaser | integer | - | 22 |
-| Cruel | integer | - | 23 |
-| Closer | integer | - | 24 |
-| Assassin | integer | - | 25 |
-| Sentinel | integer | - | 26 |
-| Savior | integer | - | 27 |
-
-<br></br>
-
-## Hook Functions
-
-<hr></hr>
-
-### cGetExactTime
-
-
-**Hook only**
-Gives the exact server tick as return value.
-
-```lua  title='Definition'
-function cGetExactTime(Player, Amount)
-end
-```
-
-#### Return values
-
-| Name | Type |
-|------|------|
-| Time | integer |
-
-```lua title='Example'
-local time = cGetExactTime()
-```
-
-<hr></hr>
-
-### cGainMoney
-
-
-**Hook only**
-Gives a player a specific amount of money (in bronze).
-
-```lua  title='Definition'
-function cGainMoney(Player, Amount)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| Amount | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cGainMoney(player, 1000000)
-```
-
-<hr></hr>
-
-### cAddMoney
-
-
-**Hook only**
-Gives a player a specific amount of money (in bronze).
-
-```lua  title='Definition'
-function cAddMoney(Player, Amount)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| Amount | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cAddMoney(player, 1000000)
-```
-
-<hr></hr>
-
-### cGetExactClass
-
-
-**Hook only**
-Returns the exact class of a player.
-
-```lua  title='Definition'
-function cGetExactClass(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| ClassID | Classes|nil |
-
-```lua title='Example'
-local class = cGetExactClass(player)
-```
-
-<hr></hr>
-
-### cGetClass
-
-
-**Hook only**
-Returns the exact class of a player.
-
-```lua  title='Definition'
-function cGetClass(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| ClassID | Classes|nil |
-
-```lua title='Example'
-local class = cGetClass(player)
-```
-
-<hr></hr>
-
-### cObjectSP
-
-
-**Hook only**
-Returns SP of object.
-
-```lua  title='Definition'
-function cObjectSP(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| CurSP | integer|nil |
-| MaxSP | integer|nil |
-
-```lua title='Example'
-local curSp, maxSp = cObjectSP(player)
-```
-
-<hr></hr>
-
-### cGainFame
-
-
-**Hook only**
-Gives the player fame.
-
-```lua  title='Definition'
-function cGainFame(Player, Fame)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| Fame | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cGainFame(player, 5000)
-```
-
-<hr></hr>
-
-### cAddFame
-
-
-**Hook only**
-Gives the player fame.
-
-```lua  title='Definition'
-function cAddFame(Player, Fame)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| Fame | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cAddFame(player, 5000)
-```
-
-<hr></hr>
-
-### cSendShout
-
-
-**Hook only**
-Sends a map wide shout. Mob only.
-
-```lua  title='Definition'
-function cSendShout(MobHandle, ReceiverHandle, CharName, Message)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| MobHandle | integer |
-| ReceiverHandle | integer |
-| CharName | string |
-| Message | string |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cSendShout(mobHandle, player, "Test", "Test Message")
-```
-
-<hr></hr>
-
-### cShout
-
-
-**Hook only**
-Sends a map wide shout. Mob only.
-
-```lua  title='Definition'
-function cShout(MobHandle, ReceiverHandle, CharName, Message)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| MobHandle | integer |
-| ReceiverHandle | integer |
-| CharName | string |
-| Message | string |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cShout(mobHandle, player, "Test", "Test Message")
-```
-
-<hr></hr>
-
-### cSendRoar
-
-
-**Hook only**
-Sends a roar with the given name and text.
-
-```lua  title='Definition'
-function cSendRoar(Name, Text)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Name | string |
-| Text | string |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-local name = cGetPlayerName(player)
-cSendRoar(name, "A random roar appeared")
-```
-
-<hr></hr>
-
-### cRoar
-
-
-**Hook only**
-Sends a roar with the given name and text.
-
-```lua  title='Definition'
-function cRoar(Name, Text)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Name | string |
-| Text | string |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-local name = cGetPlayerName(player)
-cRoar(name, "A random roar appeared")
-```
-
-<hr></hr>
-
-### cPostDiscord
-
-
-**Hook only**
-Posts a message to discord.
-
-```lua  title='Definition'
-function cPostDiscord(ChannelID, Message)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| ChannelID | integer |
-| Message | integer |
-
-```lua title='Example'
-cPostDiscord(874596899850711120, "Test Message")
-```
-
-<hr></hr>
-
-### cKickout
-
-
-**Hook only**
-Disconnects a player.
-
-```lua  title='Definition'
-function cKickout(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cKickout(player)
-```
-
-<hr></hr>
-
-### cGetItemPower
-
-
-**Hook only**
-Returns the item power of the player.
-
-```lua  title='Definition'
-function cGetItemPower(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| ItemPower | integer|nil |
-
-```lua title='Example'
-local itemPower = cGetItemPower(player)
-```
-
-<hr></hr>
-
-### cHasSubAbstate
-
-
-**Hook only**
-Checks if a user has the given sub abstate.
-
-```lua  title='Definition'
-function cHasSubAbstate(Player, SubAbstateIndex)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| SubAbstateIndex | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| HasSubAbstate | boolean|nil |
-
-```lua title='Example'
-local itemPower = cHasSubAbstate(player, 5)
-```
-
-<hr></hr>
-
-### cPartyMembers
-
-
-**Hook only**
-Returns all party members on the same map. First returned value indicates group status.
-
-```lua  title='Definition'
-function cPartyMembers(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Players | integer|nil |
-
-```lua title='Example'
-local memberList = cPartyMembers(player)
-if memberList ~= nil then
-   if memberList[1] == 0 then
-         for k = 2, #memberList do
-             -- memberList[k]
-         end
-   elseif memberList[1] == 1 then
-        -- Raid
-   elseif memberList[1] == 2 then
-        -- Solo
-   end
-else
-   -- Error -> Handle invalid, not a player, etc.
-end
-```
-
-<hr></hr>
-
-### cPartyMembersZone
-
-
-**Hook only**
-Returns all party members on the same zone. First returned value indicates group status.
-
-```lua  title='Definition'
-function cPartyMembersZone(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Players | integer|nil |
-
-```lua title='Example'
-local memberList = cPartyMembersZone(player)
-if memberList ~= nil then
-   if memberList[1] == 0 then
-         for k = 2, #memberList do
-             -- memberList[k]
-         end
-   elseif memberList[1] == 1 then
-        -- Raid
-   elseif memberList[1] == 2 then
-        -- Solo
-   else
-       -- Error - Handle invalid, not a player, etc.
-   end
-end
-```
-
-<hr></hr>
-
-### cPlayerStatTotal
-
-
-**Hook only**
-Returns the total value of the stat for the player.
-
-```lua  title='Definition'
-function cPlayerStatTotal(Player, StatIndex)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| StatIndex | StatsEnum |
-#### Return values
-
-| Name | Type |
-|------|------|
-| TotalSkilled | integer|nil |
-
-```lua title='Example'
-local stats = cPlayerStatTotal(player, Stats.Str)
-```
-
-<hr></hr>
-
-### cPlayerStatSkilled
-
-
-**Hook only**
-Returns the skilled value of the stat.
-
-```lua  title='Definition'
-function cPlayerStatSkilled(Player, StatIndex)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| StatIndex | StatsEnum |
-#### Return values
-
-| Name | Type |
-|------|------|
-| TotalSkilled | integer |
-
-```lua title='Example'
-local stats = cPlayerStatSkilled(player, Stats.Str)
-```
-
-<hr></hr>
-
-### cGetTarget
-
-
-**Hook only**
-Mob safe variant to get the targeted object.
-
-```lua  title='Definition'
-function cGetTarget(MobHandle)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| MobHandle | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| PlayerHandle | integer|nil |
-
-```lua title='Example'
-local target = cGetTarget(player)
-```
-
-<hr></hr>
-
-### cGetExp
-
-
-**Hook only**
-Get total exp of players. Gets converted to 32 bit. Do not use.
-
-```lua  title='Definition'
-function cGetExp(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Exp | integer|nil |
-
-```lua title='Example'
-local exp = cGetExp(player)
-```
-
-<hr></hr>
-
-### cRevive
-
-
-**Hook only**
-Revives the player.
-
-```lua  title='Definition'
-function cRevive(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-#### Return values
-
-| Name | Type |
-|------|------|
-| Success | boolean|nil |
-
-```lua title='Example'
-cRevive(player)
-```
-
-<hr></hr>
-
-### cLinkTo
-
-
-**Hook only**
-Teleports the user to the default position of the map he is on.
-
-```lua  title='Definition'
-function cLinkTo(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-
-```lua title='Example'
-cLinkTo(player)
-```
-
-<hr></hr>
-
-### cLinkTo
-
-
-**Hook only**
-Teleports the user to the default position of the map.
-
-```lua  title='Definition'
-function cLinkTo(Player, MapInx)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-| MapInx | string |
-
-```lua title='Example'
-cLinkTo(player, "Rou")
-```
-
-<hr></hr>
-
-### cFinishKey
-
-
-**Hook only**
-Finish key after completing instance
-
-```lua  title='Definition'
-function cFinishKey(MapInx, InTime)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| MapInx | string |
-| InTime | boolean |
-
-```lua title='Example'
-cFinishKey("Rou", true)
-```
-
-<hr></hr>
-
-### cStartKey
-
-
-**Hook only**
-Start key when starting instance
-
-```lua  title='Definition'
-function cStartKey(Player)
-end
-```
-
-#### Arguments
-
-| Name | Type |
-|------|------|
-| Player | integer |
-
-```lua title='Example'
-cStartKey("Rou")
-```
-
-<hr></hr>
-
 <br></br>
 
 ## Undocumented
@@ -2226,7 +1348,6 @@ cStartKey("Rou")
 <hr></hr>
 
 ### cPet_IsMasterCalling
-
 ```lua  title='Definition'
 function cPet_IsMasterCalling()
 end
@@ -2236,7 +1357,6 @@ end
 <hr></hr>
 
 ### cPet_GetMind
-
 ```lua  title='Definition'
 function cPet_GetMind()
 end
@@ -2246,7 +1366,6 @@ end
 <hr></hr>
 
 ### cPet_GetStress
-
 ```lua  title='Definition'
 function cPet_GetStress()
 end
@@ -2256,7 +1375,6 @@ end
 <hr></hr>
 
 ### cPet_GetWalkSpeed
-
 ```lua  title='Definition'
 function cPet_GetWalkSpeed()
 end
@@ -2266,7 +1384,6 @@ end
 <hr></hr>
 
 ### cPet_GetRunSpeed
-
 ```lua  title='Definition'
 function cPet_GetRunSpeed()
 end
@@ -2276,7 +1393,6 @@ end
 <hr></hr>
 
 ### cPet_Unsummon
-
 ```lua  title='Definition'
 function cPet_Unsummon()
 end
@@ -2286,7 +1402,6 @@ end
 <hr></hr>
 
 ### cPet_GetActionRecord
-
 ```lua  title='Definition'
 function cPet_GetActionRecord()
 end
@@ -2296,7 +1411,6 @@ end
 <hr></hr>
 
 ### cPet_ChangeMind
-
 ```lua  title='Definition'
 function cPet_ChangeMind()
 end
@@ -2306,7 +1420,6 @@ end
 <hr></hr>
 
 ### cPet_SaveTendency
-
 ```lua  title='Definition'
 function cPet_SaveTendency()
 end

@@ -81,7 +81,7 @@ const config = {
         footer: {
             style: 'dark',
             links: [{
-                    title: 'FiestaHeroes',
+                    title: 'Fiesta Heroes',
                     items: [{
                             label: 'Website',
                             href: 'https://fiestaheroes.com/',
@@ -99,7 +99,11 @@ const config = {
                 {
                     title: 'Community',
                     items: [{
-                        label: 'Dev Discord',
+                        label: 'Discord - Fiesta Heroes',
+                        href: 'https://discord.gg/TCFzBPgtPX',
+                    },
+                    {
+                        label: 'Discord - Dev',
                         href: 'https://discord.gg/Fn7PNEKb3K',
                     }],
                 },
