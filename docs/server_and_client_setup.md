@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Server & Client Setup
+# Server and Client Setup
 
 ## Server
 
@@ -136,7 +136,7 @@ Next, you will need to install the following services depending on your set:
 ```
 
 :::tip
-For the NA2016 GamigoZR install.bat, edit and change it to match your filesystem layout. The current path inside the .bat should self-explanatory on how you should have it. 
+For the GamigoZR install.bat, edit and change it to match your filesystem layout. The current path inside the .bat should be self-explanatory. 
 :::
 
 :::caution
