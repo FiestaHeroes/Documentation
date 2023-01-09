@@ -172,6 +172,16 @@ If you forgot to enable mix mode during the installation like previously mention
 - [Enable Mixed Mode Authentication for SQL Server](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
 :::
 
+:::caution
+If you're using the NA2016 file set, please make sure you execute and apply the following files:
+
+```bash
+/Server/Fantasy.reg
+/Server/GBO.reg
+```
+**If you forget to do this step, the zone services will not start.**
+:::
+
 ## Client
 
 Assuming you have downloaded the game client from the link in your sets repository (under the downloads section), and followed the directions, this is what you'll need to-do.
