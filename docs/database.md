@@ -3,17 +3,17 @@ sidebar_position: 2
 ---
 
 # Common Database Table Information
-Quick and basic rundown of the most commonly viewed tables inside the databases.
+Brief overview of the tables that are frequently accessed within databases.
 
 :::note
-Some columns can vary between sets. But, this information is mostly universal.
+Although the columns within a set may differ, the information they contain is generally consistent and can be easily compared across all sets.
 :::
 
 ## Account Database
 ### tUser
 nUserNo:
 ```bash
-Unique identifier of the account.
+Unique identification number for the account.
 ```
 
 sUserID:
@@ -23,12 +23,12 @@ Account username.
 
 sUserPW:
 ```bash
-Account password. Passwords are hashed with MD5 by default.
+Account password. Passwords are encrypted using the MD5 algorithm as the default method.
 ```
 
 bIsBlock:
 ```bash
-If the account is blocked or not.
+If the account has been blocked or not.
 ```
 
 nAuthID:
@@ -36,32 +36,32 @@ nAuthID:
 Account level.
 ```
 :::tip
-If the account level equals 9, every character they create will automatically have 100 admin level. This feature is included in all of our sets.
+If the account level is set to 9, all characters created under that account will have an automatic admin level of 100. This feature is included in all of our sets.
 :::
 
 sUserIP:
 ```bash
-IP Address of the account.
+The IP Address associated with the account.
 ```
 
 :::caution
-When using our automatic account creation, this field is localhost by default.
+When utilizing our automatic account creation feature, the default value for this field is set to "localhost".
 :::
 
 sEmail:
 ```bash
-Email Address of the account.
+The Email Address associated with the account.
 ```
 
 :::caution
-When using our automatic account creation, this field is NULL.
+When utilizing our automatic account creation feature, the default value for this field is set to "NULL".
 :::
 
 ### tUserAuth
 
 nAuthID:
 ```bash
-Account level. Can be anything you want, really.
+Account level. This field can be set to any desired value.
 ```
 
 sAuthName:
@@ -71,28 +71,28 @@ Description.
 
 bIsLoginAble:
 ```bash
-If said level can login or not. Useful maintenances.
+Whether or not this level can log in. Useful for maintenance purposes.
 ```
 
 ### tChargeItem
 
 :::info
-This table is used for an Item Mall.
+This table is utilized for a virtual Item Mall.
 :::
 
 userNo:
 ```bash
-nUserNo of the account. Same as Account.tUser
+The identification number linked to the account.
 ```
 
 orderNo:
 ```bash
-Unique identifier of the order.
+Unique identification number for the order.
 ```
 
 goodsNo:
 ```bash
-ItemShop.shn
+ItemShop.shn.
 ```
 
 ## AccountLog Database
@@ -101,19 +101,19 @@ ItemShop.shn
 
 sIPStart:
 ```bash
-The starting range of the IP Addresses.
+Starting range of the IP Address.
 
 Example: 192.168.0.1
 ```
 
 sIPEnd:
 ```bash
-The ending range of the IP Addresses.
+Ending range of the IP Address.
 
 Example: 192.168.0.254
 ```
 :::tip
-If you're wanting to ban just a single IP, enter that IP in both fields.
+If you want to ban a specific IP address, enter it in both fields.
 :::
 
 ## World00_Character Database
@@ -122,7 +122,7 @@ If you're wanting to ban just a single IP, enter that IP in both fields.
 
 nCharNo:
 ```bash
-Unique identifier of the character.
+Unique identification number for the character.
 ```
 
 sID:
@@ -132,17 +132,17 @@ Character name.
 
 nUserNo:
 ```bash
-Account ID associated with the character.
+The identification number linked to the account.
 ```
 
 nAdminLevel:
 ```bash
-GM level of the character. Max is usually, 100.
+GM level of the character. Usually, the max is 100.
 ```
 
 sLoginZone:
 ```
-Map InxName of the character.
+Map location of the character.
 ```
 
 nLoginZoneX:
@@ -157,34 +157,34 @@ Y coordinate of the character.
 
 nLevel:
 ```bash
-Character level.
+Characters level.
 ```
 
 nExp:
 ```bash
-Character EXP.
+Characters EXP.
 ```
 
 nFame:
 ```bash
-Character amount of fame.
+Characters amount of fame.
 ```
 
 nMoney:
 ```bash
-Character amount of money.
+Characters total amount of money.
 ```
 
 ### tCharacterShape
 
 nCharNo:
 ```bash
-ID of the character.
+The identification number linked to the character.
 ```
 
 nClass:
 ```bash
-ClassName.shn
+ClassName.shn.
 ```
 
 nGender:
@@ -197,46 +197,46 @@ Character gender.
 
 nHairType:
 ```bash
-HairInfo.shn
+HairInfo.shn.
 ```
 
 nHairColor:
 ```bash
-HairColorInfo.shn
+HairColorInfo.shn.
 ```
 
 nFaceShape:
 ```bash
-FaceInfo.shn
+FaceInfo.shn.
 ```
 
 ### tItem
 
 nItemKey:
 ```bash
-Unique identifier of the item.
+Unique identification number for the item.
 ```
 
 nOwner:
 ```bash
-Character ID that currently has the item.
+The identification number linked to the character.
 ```
 
 nItemID:
 ```bash
-ItemInfo.shn
+ItemInfo.shn.
 ```
 
 ### tPrison
 
 nCharID:
 ```bash
-Character ID.
+The identification number linked to the character.
 ```
 
 nMinute:
 ```bash
-The amount of minutes you want the character prisoned for.
+The number of minutes for which you want the character to be imprisoned.
 ```
 
 sReason:
@@ -246,7 +246,7 @@ Description.
 
 ## Example Queries
 
-This can be useful if you're wanting to build some server statistics.
+This can be useful for creating server statistics.
 
 How many players are currently playing:
 ```sql

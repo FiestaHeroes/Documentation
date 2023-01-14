@@ -4,10 +4,10 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Developer Documentation',
+    title: 'Development',
     description: (
       <>
-        This documentation is aimed at developers of the fiesta online pserver scene.
+        Our goal is to provide the best foundation for creating your own server. We are dedicated to developing, maintaining, and fixing any retail or base content within our sets.
       </>
     ),
   },
@@ -15,10 +15,9 @@ const FeatureList = [
     title: 'Extensive Fileset Support',
     description: (
       <>
-      Currently supported:<br></br>
-      - 2016 (Gamigo - NA2016)<br></br>
-      - CN (Love of Light - CN2012) <br></br>
-      - Athens (Holy Light2 - TW2008)<br></br>
+      NA2016 - Fiesta Online (Gamigo)<br></br>
+      CN2012 - 光之萌约 (Love Of Light)<br></br>
+      TW2008 - 聖光2 (Holy Light 2)<br></br>
       </>
     ),
   },
@@ -26,7 +25,7 @@ const FeatureList = [
     title: 'Archive',
     description: (
       <>
-        This project also includes an archive that has the files referenced in this doc including updates if needed.
+        Furthermore, we are also hosting our own archive, where we store official content from over the years, such as images, articles, videos, clients, tools, and more.
       </>
     ),
   },

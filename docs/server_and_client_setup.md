@@ -6,47 +6,47 @@ sidebar_position: 1
 
 ## Server
 
-Before you begin, make sure your server meets the following requirements:
+Before proceeding, ensure that your server has met the following prerequisites:
 ```bash
 # Supported Operating Systems
 Windows Server: 2016, 2019 and 2022
 Windows: 10 and 11.
 
-# Hardware Specifications (Minimum Requirements)
+# Minimum Hardware Requirements
 RAM: 16GB
 CPU: 4c/2t
-DISK: This can technically be the minimum amount the OS requires. But, we at least recommend 128GB.
+DISK: This can technically be the minimum amount required by the operating system. However, we recommend at least 128GB.
 ```
-Next, make sure you have Microsoft SQL Server properly installed and configured before continuing. You can directly download the installations from the following links:
+Verify that you have properly installed and configured Microsoft SQL Server before continuing. You can obtain the installation files directly from the following links:
 *	[Microsoft SQL Server 2019](https://go.microsoft.com/fwlink/p/?linkid=866658)
 *	[Microsoft SQL Server Management Studio](https://aka.ms/ssmsfullsetup)
 
 :::caution
-When installing Microsoft SQL Server, please make sure you have **enabled mix mode.** This will be needed when setting up your servers configuration file later.
+When installing Microsoft SQL Server, ensure that you have activated mixed mode. This is essential for setting up your server's configuration file later on.
 :::
 
 :::note
-You can use newer Microsoft SQL server installations as well. But, it must be equal or greater than 2019.
+You can also use newer versions of Microsoft SQL Server, as long as they are equal to or greater than 2019.
 :::
 
-Now, download your desired set from our [GitHub](https://github.com/FiestaHeroes/). We currently support the following sets:
+Proceed to download your preferred set from our [GitHub](https://github.com/FiestaHeroes/). We currently offer support for the following sets:
 
 * [NA2016](https://github.com/FiestaHeroes/NA2016/) - Fiesta Online (Gamigo)
 * [CN2012](https://github.com/FiestaHeroes/CN2012/) - 光之萌约 (Love Of Light)
 * [TW2008](https://github.com/FiestaHeroes/TW2008/) - 聖光2 (Holy Light 2)
 
-We have two methods of setting up your server. Script or manual. The script method will be utilizing our PowerShell scripts, which will make the installation process a lot faster. Manual is for the more experienced users.
+There are two options for setting up your server: script or manual. The script method involves using our PowerShell scripts, which will speed up the installation process. Manual setup is intended for more experienced users.
 
 ### Script Setup
 
-This part should be reasonably easy, if you have Microsoft SQL Server correctly setup. We will be utilizing our PowerShell scripts. Make sure you're in the server directory of your files.
+This task should be relatively straightforward if you have correctly set up Microsoft SQL Server. We will be utilizing our PowerShell scripts. Ensure that you are in the server directory of your files before proceeding.
 
 :::info
-We use windows authentication mode for our scripts. Also, **we use the default instance name, /SQLEXPRESS**. If you changed yours during the installation process, you will need to adjust all the scripts accordingly.
+Our scripts utilize windows authentication mode. Additionally, the default instance name /SQLEXPRESS is used. If you altered the instance name during the installation process, you will need to make the appropriate changes to all the scripts.
 :::
 
 :::caution
-Our PowerShell scripts **require administrative privileges**.
+It is important to note that administrative privileges are required to run our PowerShell scripts.
 :::
 
 #### Script Path and Descriptions
@@ -63,29 +63,29 @@ This will forward the required ports for your server.
 /Server/_Install Databases.ps1
 
 # Description
-This will automatically install all your databases. You will be prompted when finished.
+This action will automatically install all of your databases. You will receive a notification when the process is complete.
 ```
 ```bash
 # File path and name.
 /Server/_Install Services.ps1
 
 # Description
-This will automatically install all your services. You will be prompted when each service is installed.
+This will automatically install all of your services. You will receive a prompt for each service as it is installed.
 ```
 :::caution
-If you have any issues, please make sure your Microsoft SQL Server is properly installed and configured the way mentioned previously.
+If you encounter any problems, ensure that your Microsoft SQL Server is properly installed and configured as previously described.
 :::
 
 ### Manual Setup
 
-Open Microsoft SQL Server Management Studio. After you have successfully connected, right-click on "Databases" and select "Restore Databases".
+Open Microsoft SQL Server Management Studio. Once connected, right-click on "Databases" and select "Restore Databases".
 
-Select "Device:" and navigate to your servers database backup directory.
+Select "Device:" and navigate to the backup directory for your server's databases.
 ```bash
 /Server/Databases/
 ```
 
-Restore each one individually, until you have successfully restored the following:
+Restore each one individually until all of the following have been successfully restored:
 ```bash
 Account
 AccountLog
@@ -95,7 +95,7 @@ World00_Character
 World00_GameLog
 ```
 
-Next, you will need to install the following services depending on your set:
+Additionally, you will need to install the following services based on your chosen set:
 ```bash
 # NA2016
 /Server/Account/Account.exe
@@ -136,16 +136,16 @@ Next, you will need to install the following services depending on your set:
 ```
 
 :::tip
-For the GamigoZR install.bat, edit and change it to match your filesystem layout. The current path inside the .bat should be self-explanatory. 
+For the GamigoZR install.bat, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand.
 :::
 
 :::caution
-Make sure you run all of these files as an **administrator**. Right-click on the file, and select "Run as administrator".
+Ensure that you run all of these files as an administrator by right-clicking on the file and selecting "Run as administrator".
 :::
 
 ### Configuration
 
-Navigate to the following configuration file based on your set:
+Locate the following configuration file based on your chosen set:
 ```bash
 NA2016:
 /Server/9Data/ServerInfo/ServerInfo.txt
@@ -156,40 +156,40 @@ CN2012:
 TW2008:
 /Server/9Data/_ServerInfo.txt
 ```
-The document will have detailed comments inside, and should be self-explanatory.
+The document will have detailed comments throughout and should be clear and easy to understand.
 
-Just make sure you take your time and follow the directions. Also, make sure to keep the IP Addresses within the quotations.
+Be sure to take your time and follow the instructions carefully. Additionally, ensure that the IP Addresses are kept within the quotation marks.
 
 :::tip
-If it says "LOCALHOST" at the end of the line, do not change it to another IP. Like the document says.
+If the line ends with "LOCALHOST", do not change it to another IP address as indicated in the document.
 :::
 
-Lastly, configure the "ODBC_INFO" sections.
+Finally, set up the "ODBC_INFO" sections.
 
 :::caution
-If you forgot to enable mix mode during the installation like previously mentioned, below is a link on how-to enable it.
+If you forgot to activate mixed mode during installation, as previously stated, the link below provides instructions on how to enable it.
 
 - [Enable Mixed Mode Authentication for SQL Server](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
 :::
 
 :::caution
-If you're using the NA2016 file set, please make sure you execute and apply the following files:
+If you are using the NA2016 file set, ensure that you run and apply the following files:
 
 ```bash
 /Server/Fantasy.reg
 /Server/GBO.reg
 ```
-**If you forget to do this step, the zone services will not start.**
+**If this step is not performed, the zone services will fail to start.**
 :::
 
 ## Client
 
-Assuming you have downloaded the game client from the link in your sets repository (under the downloads section), and followed the directions, this is what you'll need to-do.
+Assuming that you have downloaded the game client from the link in your set's repository (found in the downloads section), and followed the instructions, the following steps must be completed.
 
-Depending on how your server is configured (public or localhost), you will need to edit the "Game.bat".
+Depending on the configuration of your server (public or localhost), the "Game.bat" file must be edited.
 
 :::note
-If this server is localhost, no need to edit this file.
+If this server is configured as localhost, editing the file is not necessary.
 :::
 
 ```bash
@@ -202,11 +202,11 @@ Fiesta.bin
 The IP of the server you're connecting to.
 
 # -p parameter
-The login port of the server you're connecting to. By default we use 9010 for all of our sets.
+The login port of the server you are connecting to. By default, we use 9010 for all our sets.
 ```
 
-After you have successfully configured this batch file, execute it. The game will open. If you have followed everything correctly, you should be able to login and begin.
+After configuring this batch file successfully, run it. The game will launch. If you have followed all the instructions correctly, you should be able to log in and start playing.
 
 :::tip
-All of our sets include automatic account creation. All you will have to-do is enter the credentials you want, and the account will be inserted into the database: Account > Tables > tUser.
+All of our sets include automatic account creation. All you need to do is enter the desired credentials and the account will be added to the database: Account > Tables > tUser.
 :::

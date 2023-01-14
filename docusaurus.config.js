@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Fiesta Heroes Doc',
-    tagline: 'Fiesta online - Dev Documentation',
+    title: 'Documentation',
+    tagline: 'Providing a public and well-organized resource for guided development.',
     url: 'https://doc.fiestaheroes.com/',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -66,16 +66,6 @@ const config = {
                     position: 'left',
                     label: 'Doc',
                 },*/
-                {
-                    href: 'https://fiestaheroes.com/',
-                    label: 'Homepage',
-                    position: 'right',
-                },
-                {
-                    href: 'https://github.com/FiestaHeroes/doc',
-                    label: 'GitHub',
-                    position: 'right',
-                },
             ],
         },
         footer: {
@@ -87,8 +77,8 @@ const config = {
                             href: 'https://fiestaheroes.com/',
                         },
                         {
-                            label: 'Documentation',
-                            href: 'https://doc.fiestaheroes.com/',
+                            label: 'GitHub',
+                            href: 'https://github.com/FiestaHeroes/',
                         },
                         {
                             label: 'Archive',
@@ -99,23 +89,27 @@ const config = {
                 {
                     title: 'Community',
                     items: [{
-                        label: 'Discord - Fiesta Heroes',
+                        label: 'Fiesta Heroes Official Discord Server',
                         href: 'https://discord.gg/TCFzBPgtPX',
-                    },
-                    {
-                        label: 'Discord - Dev',
-                        href: 'https://discord.gg/Fn7PNEKb3K',
                     }],
                 },
                 {
-                    title: 'More',
+                    title: 'Additional Resources',
                     items: [{
-                            label: 'GitHub - Fiesta Heroes',
-                            href: 'https://github.com/FiestaHeroes',
+                            label: 'Fiesta Online Private Server Development Discord',
+                            href: 'https://discord.gg/m8NFFxSzPM',
                         },
                         {
-                            label: 'GitHub - Doc',
-                            href: 'https://github.com/FiestaHeroes/doc',
+                            label: 'Fiesta Online Dev Discord',
+                            href: 'https://discord.gg/BUgGGgGUkh',
+                        },
+                        {
+                            label: 'RageZone',
+                            href: 'https://forum.ragezone.com/f591/',
+                        },
+                        {
+                            label: 'Elitepvpers',
+                            href: 'https://www.elitepvpers.com/forum/fiesta-online/',
                         },
                     ],
                 },
