@@ -771,6 +771,35 @@ cGroupRegenInstance("AdlF", "AdlF_01_SP01")
 
 <hr></hr>
 
+### cGetAbstate
+
+Gets the strength and remaining time of an Abstate on a Handle.
+
+```lua title='Definition'
+function cGetAbstate(Handle, AbstateINX)
+end
+```
+
+#### Arguments
+
+| Name       | Type    |
+|------------|---------|
+| Handle     | integer |
+| AbstateINX | string  |
+
+#### Return values
+
+| Name             | Type             |
+|------------------|------------------|
+| Abstate Strength | integer&#124;nil |
+| Remainig Time    | integer&#124;nil |
+
+```lua title='example'
+local strength, remainingTime = cGetAbstate(player, "StaImmortal")
+```
+
+<hr></hr>
+
 ### cSetAbstate
 
 Sets an Abstate on a Handle.
@@ -1190,6 +1219,63 @@ end
 
 ```lua title='Example'
 cSetAbstate_Range(MobHandle, 1000, ObjectType.Mob, "StaImmortal", 1, 20000)
+```
+
+<hr></hr>
+
+### cSetAbstateInArea
+
+Set Abstate in a pre-defined area.<br/>
+_Disclaimer: The areas used here are located in `Shine/AreaBMP`_
+
+```lua  title='Definition'
+function cSetAbstateInArea(MapInx, AbstateInx, AbstateStrength, AbstateKeepTime, AreaBMP, CenterX, CenterY)
+end
+```
+
+#### Arguments
+
+| Name            | Type    |
+|-----------------|---------|
+| MapInx          | integer |
+| AbstateInx      | string  |
+| AbstateStrength | integer |
+| AbstateKeepTime | integer |
+| AreaBMP         | string  |
+| CenterX         | integer |
+| CenterY         | integer |
+
+```lua title='Example'
+cSetAbstateInArea(MapIndex, "StaBRNWarH", 1, 1000, "WarH_BossRoom", 22255, 12636)
+```
+
+<hr></hr>
+
+### cAbstateRestTime
+
+Returns the remaining time of an abstate on the given handle.<br/>
+Returns nil if the abstate is not found on the target.
+
+```lua  title='Definition'
+function cAbstateRestTime(Handle, AbstateInx)
+end
+```
+
+#### Arguments
+
+| Name            | Type    |
+|-----------------|---------|
+| Handle          | integer |
+| AbstateInx      | string  |
+
+#### Return values
+
+| Name              | Type             |
+|-------------------|------------------|
+| Remaining Seconds | integer&#124;nil |
+
+```lua title='Example'
+local restTime = cAbstateRestTime(player, "StaImmortal")
 ```
 
 <hr></hr>
