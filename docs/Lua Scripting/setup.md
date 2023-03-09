@@ -21,4 +21,20 @@ This file can be used for auto completion in IDEs. Below is the Setup for differ
 - Under Lua > Workspace: Library -> Add Path to fiesta.lua file
 
 ![Example banner](../assets/lua_setup_1.png)
-    
+
+## IntelliJ IDEA
+
+#### Installing LUA Plugin
+- Open Settings `Ctrl+Alt+S`
+- Install "EmmyLua" from the Plugin Marketplace
+
+![IntelliJ Plugin Marketplace](../assets/lua_setup_intellij_marketplace.png)
+
+- Restart the IDE and you are done!
+
+#### Adding Fiesta LUA definitions
+
+- Open Project Settings `Ctrl+Alt+Shift+S`
+- Go to `Libraries` and click the `+` sign
+- Select `Lua Zip Library` and select the path, where your `fiesta.lua` is located
+- Click OK again
