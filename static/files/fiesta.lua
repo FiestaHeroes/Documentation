@@ -459,6 +459,18 @@ end
 function cGroupRegenInstance(MapINX, RegenINX)
 end
 
+--- Gets the strength and remaining time of an Abstate on a Handle.
+---
+--- ```
+--- local AbstateStrength, AbstateTime = cGetAbstate(player, "StaImmortal")
+--- ```
+---@param Handle integer
+---@param AbstateInx string
+---@return integer|nil AbstateStrength
+---@return integer|nil AbstateTime
+function cGetAbstate(Handle, AbstateInx)
+end
+
 --- Sets an Abstate on a Handle.
 ---
 --- ```
@@ -649,6 +661,34 @@ end
 ---@param KeepTime integer
 ---@return boolean|nil Success
 function cSetAbstate_Range(Handle, Range, ObjectType, Index, Strength, KeepTime)
+end
+
+--- Set Abstate in a pre-defined area.<br/>
+--- _Disclaimer: The areas used here are located in `Shine/AreaBMP`_
+---
+--- ```
+--- cSetAbstateInArea(MapIndex, "StaBRNWarH", 1, 1000, "WarH_BossRoom", 22255, 12636)
+--- ```
+---@param MapInx integer
+---@param AbstateInx string
+---@param AbstateStrength integer
+---@param AbstateKeepTime integer
+---@param AreaBMP string
+---@param CenterX integer
+---@param CenterY integer
+function cSetAbstateInArea(MapInx, AbstateInx, AbstateStrength, AbstateKeepTime, AreaBMP, CenterX, CenterY)
+end
+
+--- Returns the remaining time of an abstate on the given handle.<br/>
+--- Returns nil if the abstate is not found on the target.
+---
+--- ```
+--- local restTime = cAbstateRestTime(player, "StaImmortal")
+--- ```
+---@param Handle integer
+---@param AbstateInx string
+---@return integer|nil RemainingTime
+function cAbstateRestTime(Handle, AbstateInx)
 end
 
 --- Set camera for all objects on map.
