@@ -149,7 +149,7 @@ end
 
 | Name | Type |
 |------|------|
-| MobHandle | integer|nil |
+| MobHandle | integer&#124;nil |
 
 ```lua title='Example'
 local mobHandle = cMobRegen_XY("Rou", "Slime", 5000, 5000, 0)
@@ -179,7 +179,7 @@ end
 
 | Name | Type |
 |------|------|
-| MobHandle | integer|nil |
+| MobHandle | integer&#124;nil |
 
 ```lua title='Example'
 local mobNumber = cMobRegen_Circle("Rou", "Slime", 5000, 5000, 100)
@@ -205,8 +205,8 @@ end
 
 | Name | Type |
 |------|------|
-| x | integer|nil |
-| y | integer|nil |
+| x | integer&#124;nil |
+| y | integer&#124;nil |
 
 ```lua title='Example'
 local playerX, playerY = cObjectLocate(player)
@@ -356,7 +356,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cAIScriptSet(mobHandle, mobHandle2)
@@ -382,7 +382,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cAIScriptSet(mobHandle)
@@ -409,7 +409,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cSetAIScript("ID/AdlF/AdlF", mobHandle)
@@ -535,7 +535,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cInvenItemDestroy(playerHandle, 1, 1)
@@ -562,8 +562,8 @@ end
 
 | Name | Type |
 |------|------|
-| ItemLot | integer|nil |
-| IsSlotBlocked | boolean|nil |
+| ItemLot | integer&#124;nil |
+| IsSlotBlocked | boolean&#124;nil |
 
 ```lua title='Example'
 local lot, isBlocked = cGetItemLot(playerHandle, 1)
@@ -652,7 +652,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 function OnNPCClicked(NPCHandle, PlyHandle, PlyCharNo)
@@ -682,7 +682,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cNPCMenuOpen(npcHandle, PlayerHandle)
@@ -709,7 +709,7 @@ end
 
 | Name | Type |
 |------|------|
-| NumberOfVanishedMobs | integer|nil |
+| NumberOfVanishedMobs | integer&#124;nil |
 
 ```lua title='Example'
 cVanishAll("Rou", "Slime")
@@ -763,7 +763,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cGroupRegenInstance("AdlF", "AdlF_01_SP01")
@@ -820,7 +820,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cSetAbstate(player, "StaImmortal", 1, 2000000000)
@@ -849,7 +849,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cLinkTo(player, "Rou", 5000, 5000)
@@ -876,7 +876,7 @@ end
 | Name | Type |
 |------|------|
 | Level | integer |
-| PlayerLevel | integer|nil |
+| PlayerLevel | integer&#124;nil |
 
 ```lua title='Example'
 local playerLevel = cGetLevel(player)
@@ -903,7 +903,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cSetFieldScript(MapIndex, "ID/BH_Karen/BH_Karen_P")
@@ -1063,7 +1063,7 @@ end
 
 | Name | Type |
 |------|------|
-| objectType | ObjectType|nil |
+| objectType | ObjectType&#124;nil |
 
 ```lua title='Example'
 if cObjectType(Handle) == ObjectType.Player then
@@ -1095,7 +1095,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cCastTeleport(pPlayer, "SpecificCoord", 5000, 5000)
@@ -1124,7 +1124,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cCastTeleport(pPlayer, "AnyWhere")
@@ -1151,7 +1151,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cResetAbstate(MobHandle, "StaImmortal")
@@ -1183,7 +1183,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 local players = { cGetNearObjListByCoord(Var["MapIndex"], 5000, 5000, 1000, ObjectType.Player, "so_ObjectType", 5 ) }
@@ -1214,7 +1214,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cSetAbstate_Range(MobHandle, 1000, ObjectType.Mob, "StaImmortal", 1, 20000)
@@ -1351,7 +1351,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cDoorAction(Var["Door1"], "Door1", "close")
@@ -1382,7 +1382,7 @@ end
 
 | Name | Type |
 |------|------|
-| DoorHandle | integer|nil |
+| DoorHandle | integer&#124;nil |
 
 ```lua title='Example'
 local doorHandle = cDoorBuild(Var["MapIndex"], "Barrier02", 5311, 3321, 90, 1000)
@@ -1417,7 +1417,7 @@ end
 
 | Name | Type |
 |------|------|
-| Success | boolean|nil |
+| Success | boolean&#124;nil |
 
 ```lua title='Example'
 cFieldScriptFunc(Var["MapIndex"], "RankingValue", "Ranking")

@@ -6,11 +6,11 @@ import re
 lua_lines = open("../static/files/fiesta.lua").readlines()
 
 # Remove previously auto generated markdown if it exists
-if os.path.exists("../docs/lua/documentation.md"):
-    os.remove("../docs/lua/documentation.md")
+if os.path.exists("../docs/Lua Scripting/documentation.md"):
+    os.remove("../docs/Lua Scripting/documentation.md")
 
 # Create new markdown
-md_file = open("../docs/lua/documentation.md", "w")
+md_file = open("../docs/Lua Scripting/documentation.md", "w")
 
 # Add Title
 md_file.write("# Documentation\n")
@@ -164,8 +164,9 @@ def WriteGeneralFunctions(line: str):
                     md_file.write("|------|------|\n")
 
                     for arg in GeneralFunction.Rets:
-                        for val in arg:       
-                            md_file.write(f"| {val} ")
+                        for val in arg:
+                            r = val.replace("|", "&#124;")
+                            md_file.write(f"| {r} ")
 
                         md_file.write("|\n")
 
