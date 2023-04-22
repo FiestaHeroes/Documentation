@@ -1,0 +1,22 @@
+| GradeItemOption |                   |
+| --------------- | ----------------- |
+| Str[32]         | ItemIndex         |
+| WORD            | STR               |
+| WORD            | CON               |
+| WORD            | DEX               |
+| WORD            | INT               |
+| WORD            | MEN               |
+| WORD            | ResistPoison      |
+| WORD            | ResistDeaseas     |
+| WORD            | ResistCurse       |
+| WORD            | ResistMoveSpdDown |
+| WORD            | Critical          |
+| WORD            | ToHitRate         |
+| WORD            | ToHitPlus         |
+| WORD            | ToBlockRate       |
+| WORD            | ToBlockPlus       |
+| WORD            | MaxHP             |
+| WORD            | MaxSP             |
+| WORD            | MoveSpdRate       |
+| WORD            | AbsoluteAttack    |
+| WORD            | PickupLimit       |
