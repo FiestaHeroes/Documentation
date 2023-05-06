@@ -32,7 +32,7 @@ You can also use newer versions of Microsoft SQL Server, as long as they are equ
 Proceed to download your preferred set from our [GitHub](https://github.com/FiestaHeroes/). We currently offer support for the following sets:
 
 * [NA2016](https://github.com/FiestaHeroes/NA2016/) - Fiesta Online (Gamigo)
-* [CN2012](https://github.com/FiestaHeroes/CN2012/) - 光之萌约 (Love Of Light)
+* [CN2012](https://github.com/FiestaHeroes/CN2012/) - 光之萌约 (Moe Promise)
 * [TW2008](https://github.com/FiestaHeroes/TW2008/) - 聖光2 (Holy Light 2)
 
 There are two options for setting up your server: script or manual. The script method involves using our PowerShell scripts, which will speed up the installation process. Manual setup is intended for more experienced users.

@@ -16,7 +16,7 @@ const FeatureList = [
     description: (
       <>
       NA2016 - Fiesta Online (Gamigo)<br></br>
-      CN2012 - 光之萌约 (Love Of Light)<br></br>
+      CN2012 - 光之萌约 (Moe Promise)<br></br>
       TW2008 - 聖光2 (Holy Light 2)<br></br>
       </>
     ),
