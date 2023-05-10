@@ -39,6 +39,7 @@ There are two options for setting up your server: script or manual. The script m
 
 ### Script Setup
 
+
 This task should be relatively straightforward if you have correctly set up Microsoft SQL Server. We will be utilizing our PowerShell scripts. Ensure that you are in the server directory of your files before proceeding.
 
 :::info
@@ -47,6 +48,18 @@ Our scripts utilize windows authentication mode. Additionally, the default insta
 
 :::caution
 It is important to note that administrative privileges are required to run our PowerShell scripts.
+:::
+
+:::tip
+If you encounter the error message "cannot be loaded because running scripts is disabled on this system." you can run the command below in PowerShell with administrative privileges.
+
+```bash
+Set-ExecutionPolicy Unrestricted -Force
+```
+:::
+
+:::tip
+For the GamigoZR install.bat, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand. Make sure you run this .bat file as an administrator by right-clicking on the file and selecting "Run as administrator".
 :::
 
 #### Script Path and Descriptions
@@ -72,6 +85,9 @@ This action will automatically install all of your databases. You will receive a
 # Description
 This will automatically install all of your services. You will receive a prompt for each service as it is installed.
 ```
+:::danger
+Our script "_Install Databases.ps1" **will only restore databases to the C:/ drive by default**. Therefore, if your installation path is not "C:\Program Files\Microsoft SQL Server", you will need to manually restore the databases. You can find the instructions for doing so in the manual setup process mentioned below.
+:::
 :::caution
 If you encounter any problems, ensure that your Microsoft SQL Server is properly installed and configured as previously described.
 :::
@@ -136,7 +152,7 @@ Additionally, you will need to install the following services based on your chos
 ```
 
 :::tip
-For the GamigoZR install.bat, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand.
+For the GamigoZR install.bat, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand. Make sure you run this .bat file as an administrator by right-clicking on the file and selecting "Run as administrator".
 :::
 
 :::caution
