@@ -130,6 +130,10 @@ sID:
 Character name.
 ```
 
+:::tip
+If you want to use special characters in your name, such as [GM], you will need to ensure that your nAdminLevel is greater than 0.
+:::
+
 nUserNo:
 ```bash
 The identification number linked to the account.
@@ -173,6 +177,22 @@ Characters amount of fame.
 nMoney:
 ```bash
 Characters total amount of money.
+```
+
+### QuestItemFix
+
+:::note
+Ensure that the QuestID and ItemID match each other for the same quest.
+:::
+
+ItemID:
+```bash
+Enter the ItemID number (ItemInfo.shn) of the quest item you want to prevent players from turning in repeatedly for the same quest.
+```
+
+QuestID:
+```bash
+Enter the QuestID number (QuestData.shn) of the quest you want to prevent players from repeatedly turning in the same item for.
 ```
 
 ### tCharacterShape

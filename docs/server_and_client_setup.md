@@ -43,7 +43,7 @@ There are two options for setting up your server: script or manual. The script m
 This task should be relatively straightforward if you have correctly set up Microsoft SQL Server. We will be utilizing our PowerShell scripts. Ensure that you are in the server directory of your files before proceeding.
 
 :::info
-Our scripts utilize windows authentication mode. Additionally, the default instance name /SQLEXPRESS is used. If you altered the instance name during the installation process, you will need to make the appropriate changes to all the scripts.
+Some of our scripts utilize windows authentication mode. Additionally, the default instance name /SQLEXPRESS is used. If you altered the instance name during the installation process, you will need to make the appropriate changes to said scripts.
 :::
 
 :::caution
@@ -56,10 +56,6 @@ If you encounter the error message "cannot be loaded because running scripts is 
 ```bash
 Set-ExecutionPolicy Unrestricted -Force
 ```
-:::
-
-:::tip
-For the GamigoZR install.bat, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand. Make sure you run this .bat file as an administrator by right-clicking on the file and selecting "Run as administrator".
 :::
 
 #### Script Path and Descriptions
@@ -88,7 +84,8 @@ This will automatically install all of your services. You will receive a prompt 
 :::danger
 Our script "_Install Databases.ps1" **will only restore databases to the C:/ drive by default**. Therefore, if your installation path is not "C:\Program Files\Microsoft SQL Server", you will need to manually restore the databases. You can find the instructions for doing so in the manual setup process mentioned below.
 :::
-:::caution
+
+:::note
 If you encounter any problems, ensure that your Microsoft SQL Server is properly installed and configured as previously described.
 :::
 
@@ -176,26 +173,26 @@ The document will have detailed comments throughout and should be clear and easy
 
 Be sure to take your time and follow the instructions carefully. Additionally, ensure that the IP Addresses are kept within the quotation marks.
 
-:::tip
+:::danger
 If the line ends with "LOCALHOST", do not change it to another IP address as indicated in the document.
 :::
 
-Finally, set up the "ODBC_INFO" sections.
-
-:::caution
-If you forgot to activate mixed mode during installation, as previously stated, the link below provides instructions on how to enable it.
-
-- [Enable Mixed Mode Authentication for SQL Server](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
-:::
-
-:::caution
-If you are using the NA2016 file set, ensure that you run and apply the following files:
+:::danger
+If you are using the **NA2016 file set**, ensure that you run and apply the following files:
 
 ```bash
 /Server/Fantasy.reg
 /Server/GBO.reg
 ```
 **If this step is not performed, the zone services will fail to start.**
+:::
+
+Finally, set up the "ODBC_INFO" sections.
+
+:::tip
+If you forgot to activate mixed mode during installation, as previously stated, the link below provides instructions on how to enable it.
+
+- [Enable Mixed Mode Authentication for SQL Server](https://trbonet.com/kb/enable-mixed-mode-authentication-for-sql-server/)
 :::
 
 ## Client
@@ -224,5 +221,7 @@ The login port of the server you are connecting to. By default, we use 9010 for 
 After configuring this batch file successfully, run it. The game will launch. If you have followed all the instructions correctly, you should be able to log in and start playing.
 
 :::tip
-All of our sets include automatic account creation. All you need to do is enter the desired credentials and the account will be added to the database: Account > Tables > tUser.
+All of our sets include automatic account creation. When creating your account, you will need to use the "r_" parameter. For example, if you want to create the account "admin, admin" (username and password), you will need to enter ("r_admin", "admin").
+
+Simply do this on the login screen, and the account will be added to the database: Account > Tables > tUser.
 :::
