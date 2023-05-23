@@ -7,26 +7,58 @@ sidebar_position: 1
 ## Server
 
 Before proceeding, ensure that your server has met the following prerequisites:
-```bash
-# Supported Operating Systems
-Windows Server: 2016, 2019 and 2022
-Windows: 10 and 11.
 
-# Minimum Hardware Requirements
-RAM: 16GB
-CPU: 4c/2t
-DISK: This can technically be the minimum amount required by the operating system. However, we recommend at least 128GB.
+```bash
+# -----------------------------------------------------------------------------------------
+# CN2012 / NA2016 file set:
+# -----------------------------------------------------------------------------------------
+
+# Supported Operating Systems
+- Windows Server: 2016, 2019, 2022
+- Windows: 10, 11
+
+# Minimum Hardware Specifications
+To ensure optimal performance, we recommend the following minimum hardware specifications:
+- RAM: 16GB
+- CPU: 4 cores / 4 threads
+- Disk: 128GB
+
+# -----------------------------------------------------------------------------------------
+# TW2008 file set:
+# -----------------------------------------------------------------------------------------
+
+# Supported Operating Systems
+- Windows Server: 2008 R2
+- Windows: Vista SP2, 7 SP1
+
+# Minimum Hardware Specifications
+To ensure optimal performance, we recommend the following minimum hardware specifications:
+- RAM: 8GB
+- CPU: 4 cores / 4 threads
+- Disk: 128GB
+
+# -----------------------------------------------------------------------------------------
+
+Please note that although the minimum storage requirement for the operating system can technically be lower, we highly recommend a minimum of 128GB for optimal performance.
 ```
+
 Verify that you have properly installed and configured Microsoft SQL Server before continuing. You can obtain the installation files directly from the following links:
+
+CN2012 / NA2016 file set:
 *	[Microsoft SQL Server 2019](https://go.microsoft.com/fwlink/p/?linkid=866658)
 *	[Microsoft SQL Server Management Studio](https://aka.ms/ssmsfullsetup)
+
+TW2008 file set:
+*	[Microsoft SQL Server 2014](https://www.microsoft.com/en-us/download/details.aspx?id=42299)
 
 :::caution
 When installing Microsoft SQL Server, ensure that you have activated mixed mode. This is essential for setting up your server's configuration file later on.
 :::
 
 :::note
-You can also use newer versions of Microsoft SQL Server, as long as they are equal to or greater than 2019.
+You can also utilize newer installations of Microsoft SQL Server, provided that the version is equal to or greater than the required version for your file set.
+
+However, if you intend to use a version higher than 2014 for TW2008, you will need to host the databases on a separate machine. In such cases, it is important to ensure that you appropriately configure the ```_ServerInfo.txt``` file to establish the required connection to the databases located on the separate machine.
 :::
 
 Proceed to download your preferred set from our [GitHub](https://github.com/FiestaHeroes/). We currently offer support for the following sets:
@@ -48,6 +80,12 @@ Some of our scripts utilize windows authentication mode. Additionally, the defau
 
 :::caution
 It is important to note that administrative privileges are required to run our PowerShell scripts.
+:::
+
+:::caution
+If you're using Windows Server 2008R2 for the TW2008 file set, you will need to update your PowerShell installation before you can execute these scripts.
+
+Download the file ```Win7AndW2K8R2-KB3191566-x64.zip``` from the following [link](https://www.microsoft.com/en-us/download/details.aspx?id=54616).
 :::
 
 :::tip
@@ -82,7 +120,7 @@ This action will automatically install all of your databases. You will receive a
 This will automatically install all of your services. You will receive a prompt for each service as it is installed.
 ```
 :::danger
-Our script "_Install Databases.ps1" **will only restore databases to the C:/ drive by default**. Therefore, if your installation path is not "C:\Program Files\Microsoft SQL Server", you will need to manually restore the databases. You can find the instructions for doing so in the manual setup process mentioned below.
+Our script ```_Install Databases.ps1``` **will only restore databases to the C:/ drive by default**. Therefore, if your installation path is not ```C:\Program Files\Microsoft SQL Server```, you will need to manually restore the databases. You can find the instructions for doing so in the manual setup process mentioned below.
 :::
 
 :::note
@@ -149,7 +187,7 @@ Additionally, you will need to install the following services based on your chos
 ```
 
 :::tip
-For the GamigoZR install.bat, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand. Make sure you run this .bat file as an administrator by right-clicking on the file and selecting "Run as administrator".
+For the GamigoZR ```install.bat```, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand. Make sure you run this .bat file as an administrator by right-clicking on the file and selecting "Run as administrator".
 :::
 
 :::caution
@@ -221,7 +259,9 @@ The login port of the server you are connecting to. By default, we use 9010 for 
 After configuring this batch file successfully, run it. The game will launch. If you have followed all the instructions correctly, you should be able to log in and start playing.
 
 :::tip
-All of our sets include automatic account creation. When creating your account, you will need to use the "r_" parameter. For example, if you want to create the account "admin, admin" (username and password), you will need to enter ("r_admin", "admin").
+All of our sets include automatic account creation. When creating your account, you will need to use the ```r_``` parameter. For example, if you want to create the account "admin, admin" (username and password), you will need to enter "r_admin", "admin".
 
 Simply do this on the login screen, and the account will be added to the database: Account > Tables > tUser.
+
+Additionally, by changing your account's ```nAuthID``` from 1 to ```9```, every character you create will be granted level 100 admin power automatically.
 :::
