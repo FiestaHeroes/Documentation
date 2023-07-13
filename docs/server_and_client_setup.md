@@ -147,6 +147,15 @@ World00_GameLog
 ```
 
 Additionally, you will need to install the following services based on your chosen set:
+
+:::caution
+Ensure that you run all of these files as an administrator by right-clicking on the file and selecting "Run as administrator".
+:::
+
+:::tip
+For the GamigoZR ```install.bat```, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand. Make sure you run this .bat file as an administrator by right-clicking on the file and selecting "Run as administrator".
+:::
+
 ```bash
 # NA2016
 /Server/Account/Account.exe
@@ -185,14 +194,6 @@ Additionally, you will need to install the following services based on your chos
 /Zone01/Zone.exe
 /Zone02/Zone.exe
 ```
-
-:::tip
-For the GamigoZR ```install.bat```, modify it to match your file system layout. The path inside the .bat file should be clear and easy to understand. Make sure you run this .bat file as an administrator by right-clicking on the file and selecting "Run as administrator".
-:::
-
-:::caution
-Ensure that you run all of these files as an administrator by right-clicking on the file and selecting "Run as administrator".
-:::
 
 ### Configuration
 
