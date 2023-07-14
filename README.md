@@ -30,6 +30,8 @@ To start local development and contribute to the documentation, follow these ste
    
 # Contributing
 
+If you would like to contribute to the documentation, please open a pull request with your changes. If you are unsure about something, feel free to open an issue to discuss it.
+
 ## Adding a new page
 
 To add a new page to the documentation, follow these steps:
@@ -73,10 +75,6 @@ To generate the Markdown page from the Lua script, follow these steps:
    ```
 
 3. The fiesta.lua file will be converted to Markdown and placed in the docs/lua directory.
-
-# Contributing
-
-If you would like to contribute to the documentation, please open a pull request with your changes. If you are unsure about something, feel free to open an issue to discuss it.
 
 # License
 
