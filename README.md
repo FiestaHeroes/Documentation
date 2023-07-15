@@ -42,23 +42,15 @@ To add a new page to the documentation, follow these steps:
 
    ```md
    ---
-   title: New Page
+   title: New Page 
+   sidebar_position: 0  # Position of the page in the sidebar.
    ---
 
    ```
 
 3. Add the content for the page below the frontmatter.
 
-4. Add the page to the sidebar by editing the `sidebars.js` file in the root of the repository. Add the following to the `docs` section:
-
-   ```js
-   {
-     type: 'doc',
-     id: 'new-page',
-   },
-   ```
-
-5. Commit your changes and open a pull request.
+4. Commit your changes and open a pull request.
 
 ### Lua Documentation
 
@@ -71,7 +63,8 @@ To generate the Markdown page from the Lua script, follow these steps:
 2. Run the following command:
 
    ```bash
-   python scripts/convert_lua.py
+   cd scripts
+   python convert_lua.py
    ```
 
 3. The fiesta.lua file will be converted to Markdown and placed in the docs/lua directory.

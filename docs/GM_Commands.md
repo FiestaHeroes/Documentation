@@ -1,10 +1,13 @@
 ---
+title: GM Commands
 sidebar_position: 3
 ---
 
 # GM Commands
 
 The commands you use may vary depending on the file set you're working with. To execute these commands, you can utilize the chat window within the game.
+
+## Change required admin level
 
 You have the option to modify the minimum admin level requirements through the ```AdminLvSet.shn``` file. However, if your desired set does not support this SHN file, you will have to edit the Zone.exe file using a debugger. Below I will provide an example of how to achieve this using the ```&makeitem``` GM command. For the purpose of this example, I will be using the TW2008 file set.
 
@@ -21,6 +24,8 @@ push 0xA
 mov dword ptr ds:[ebx+8],edx
 push 0x50DF20 | "&makeitem"
 ```
+
+## OVerview
 
 | Command                     | Parameters                                                              | Minimum Admin Level | Description                                                                                                                 |
 | --------------------------- | ----------------------------------------------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |

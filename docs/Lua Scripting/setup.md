@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Setup
 
-You can download the lua definitions that are used to generate the documentation under [Documentation](/docs/Lua Scripting/Documentation) with EmmyLua annotations from the link below.
+You can download the lua definitions that are used to generate the lua documentation with EmmyLua annotations from the link below.
 
 - [Raw File](/files/fiesta.lua)
 

@@ -1,8 +1,10 @@
 ---
+title: Database
 sidebar_position: 2
 ---
 
-# Common Database Table Information
+# Database Documentation
+
 Brief overview of the tables that are frequently accessed within databases.
 
 :::note
