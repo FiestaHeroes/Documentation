@@ -121,6 +121,10 @@ Set-ExecutionPolicy Unrestricted -Force
 Our script ```_Install Databases.ps1``` **will only restore databases to the C:/ drive by default**. Therefore, if your installation path is not ```C:\Program Files\Microsoft SQL Server```, you will need to manually restore the databases. You can find the instructions for doing so in the manual setup process mentioned below.
 :::
 
+:::danger
+We strongly recommend that you keep the databases' original names when restoring them. There are specific [procedure](https://www.w3schools.com/sql/sql_stored_procedures.asp) edits that rely on these names, and changing them will break the functionality.
+:::
+
 #### Script Path and Descriptions
 
 - `/Server/_Create Firewall Rule.ps1` - This will forward the required ports for your server.
@@ -139,6 +143,10 @@ Select "Device:" and navigate to the backup directory for your server's database
 ```
 
 Restore each one individually until all of the following have been successfully restored:
+
+:::danger
+We strongly recommend that you keep the databases' original names when restoring them. There are specific [procedure](https://www.w3schools.com/sql/sql_stored_procedures.asp) edits that rely on these names, and changing them will break the functionality.
+:::
 
 ```
 Account
