@@ -4,6 +4,12 @@
 name: Node.js CI
 
 on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "The reason you're running this workflow"
+        required: true
+        default: "Manually triggered build"
   push:
     branches: [ "main" ]
 
