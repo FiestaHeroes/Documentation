@@ -255,7 +255,7 @@ If the line ends with "LOCALHOST", do not change it to another IP address as ind
 :::
 
 :::danger
-If you are running on a VPS or home network, make sure to extract the ```LAN_ServerInfo.zip``` over the default files. As fiesta sends the IP addresses it reads from ServerInfo.txt to the client, it would send the LAN IP address to remote networks as well. Using this custom setup, you will have the relevant public IP addresses be sent to the server, while being able to listen on your LAN interface.
+If you are running on a VPS or home network, make sure to extract the ```LAN_ServerInfo.zip``` over the default files. As Fiesta sends the IP addresses it reads from ServerInfo to the client, it would send the LAN IP address to remote networks as well. Using this custom setup, you will have the relevant public IP addresses be sent to the client, while being able to listen on your LAN interface.
 :::
 
 <Tabs groupId="fileset-full">
