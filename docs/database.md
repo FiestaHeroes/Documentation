@@ -266,6 +266,78 @@ sReason:
 Description.
 ```
 
+## Options Database
+
+### Auto_Account_Creation
+Enabled:
+```bash
+Creating player account information automatically while logging in.
+
+0 = Disabled.
+1 = Enabled.
+```
+
+### Auto_GM
+Enabled:
+```bash
+Automatically assign an admin level of 100 to a newly created character when the account's "nAuthID" is set to 9.
+
+0 = Disabled.
+1 = Enabled.
+```
+
+### Auto_Master
+Enabled:
+```bash
+Automatically assign a master character to a newly created character.
+
+0 = Disabled.
+1 = Enabled.
+```
+nCharNo:
+```bash
+The nCharNo value the master.
+Note: If the master character doesn't exist, this will break the character creation.
+```
+
+### Character_Rebirth
+Enabled:
+```bash
+Enabling or disabling character rebirth. A relog is necessary for the changes to take effect.
+
+0 = Disabled.
+1 = Enabled.
+```
+
+Trigger_ItemID:
+```bash
+The required ItemID of the item you want the character to have in their inventory. This will initiate the rebirthing process and delete upon completion.
+```
+Trigger_Level:
+```bash
+The required level the character needs to be.
+```
+Reward_Abstate:
+```bash
+The desired Abstate ID for the reward upon rebirthing.
+```
+Unequip_Character_Items:
+```bash
+Upon rebirthing, send all equipped items to the character's reward storage.
+
+0 = Disabled.
+1 = Enabled.
+```
+
+### Tutorial_Skip
+Enabled:
+```bash
+Enable or disable the tutorial popup for newly created characters.
+
+0 = Disabled.
+1 = Enabled.
+```
+
 ## Example Queries
 
 This can be useful for creating server statistics.
