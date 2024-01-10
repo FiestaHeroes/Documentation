@@ -285,53 +285,54 @@ The timestamp of the last update. (not supposed to be changed)
 
 nDefaultValue:
 ```bash
-Enable or Disable given option on default character options.
+Default value on character creation for the given GameOption.
 
+Ex. for booleans (checkboxes on client):
 0 = Disabled.
 1 = Enabled.
 ```
 
 blsActive:
 ```bash
-TBD.
+Wether this GameOption should be applied on creation or not.
 ```
 
 sDescription:
 ```bash
-Description of optionname.
+Description for the GameOption.
 ```
-A quick Overview nOption on sDescription:
+Meanings behind each OptionNo (on NA2016 files):
 
-|nOptionNo  | sDescription          |
-|:---------:|:----------------------|
-|0          |My Character Name      |
-|1          |Other Character Names  |
-|2          |NPC Name               |
-|3          |Monster Name           |
-|4          |Drop Item Name         |
-|5          |My Character HP        |
-|6          |My Character SP(LP)    |
-|7          |Interface              |
-|8          |Chat Balloon           |
-|9          |Name Tag Change        |
-|10         |Tool Tip Pop Up        |
-|11         |Play Guide             |
-|12         |Whisper                |
-|13         |Trade Request          |
-|14         |Party Invite           |
-|15         |Guild Invite           |
-|16         |System Message         |
-|17         |Confirmations          |
-|18         |unknown                |
-|19         |Hide Chat Box          |
-|20         |unknown                |
-|21         |unknown                |
-|22         |Command Prompt         |
-|23         |unknown                |
-|24         |unknown                |
-|25         |unknown                |
-|26         |unknown                |
-|27         |Inventory Autostack    |
+| nOptionNo  | Description            |
+|:----------:|:-----------------------|
+| 0          | My Character Name      |
+| 1          | Other Character Names  |
+| 2          | NPC Name               |
+| 3          | Monster Name           |
+| 4          | Drop Item Name         |
+| 5          | My Character HP        |
+| 6          | My Character SP(LP)    |
+| 7          | Interface              |
+| 8          | Chat Balloon           |
+| 9          | Name Tag Change        |
+| 10         | Tool Tip Pop Up        |
+| 11         | Play Guide             |
+| 12         | Whisper                |
+| 13         | Trade Request          |
+| 14         | Party Invite           |
+| 15         | Guild Invite           |
+| 16         | System Message         |
+| 17         | Confirmations          |
+| 18         | Unknown                |
+| 19         | Hide Chat Box          |
+| 20         | Unknown                |
+| 21         | Unknown                |
+| 22         | Command Prompt         |
+| 23         | Unknown                |
+| 24         | Unknown                |
+| 25         | Unknown                |
+| 26         | Unknown                |
+| 27         | Inventory Autostack    |
 
 
 ## Options Database
