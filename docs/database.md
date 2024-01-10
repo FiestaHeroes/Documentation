@@ -275,12 +275,12 @@ Unique identification number for the GameOption.
 
 sys_create_date:
 ```bash
-The timestamp of creation. (not supposedto be changed)
+The timestamp of creation. (not supposed to be changed)
 ```
 
 sys_update_date:
 ```bash
-The timestamp of the last update. (not supposedto be changed)
+The timestamp of the last update. (not supposed to be changed)
 ```
 
 nDefaultValue:
