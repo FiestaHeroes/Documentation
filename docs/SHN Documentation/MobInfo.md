@@ -4,8 +4,8 @@
 | STR[32]               | Name         | The name of the monster displayed on Clare.                         |
 | DWORD                 | Level        | monster level                                                       |
 | DWORD                 | MaxHP        | Monster's Max HP                                                    |
-| DWORD                 | WalkSpeed    |                                                                     |
-| DWORD                 | RunSpeed     |                                                                     |
+| DWORD                 | WalkSpeed    | Roaming speed.                                                      |
+| DWORD                 | RunSpeed     | Chasing speed.                                                      |
 | BYTE                  | IsNPC        | 1 value for NPC                                                     |
 | DWORD                 | Size         | You can increase or decrease the size of monsters.                  |
 | INX["WeaponTypeEnum"] | WeaponType   | Weapon type for setting hit sounds.                                 |

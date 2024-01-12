@@ -15,13 +15,13 @@
 | DWORD                | SUB_G           | RGB value of icon border color                                              |
 | DWORD                | SUB_B           | RGB value of icon border color                                              |
 | INX["EquipTypeEnum"] | EquipType       |                                                                             |
-| STR[32]              | LinkFile        |                                                                             |
-| STR[32]              | TextureFile     |                                                                             |
+| STR[32]              | LinkFile        | .NIF file.                                                                  |
+| STR[32]              | TextureFile     | .DDS file.                                                                  |
 | DWORD                | MSetNo          |                                                                             |
 | DWORD                | FSetNo          |                                                                             |
-| FLOAT                | GrnItemSize     |                                                                             |
+| FLOAT                | GrnItemSize     | Item drop Icon size.                                                        |
 | STR[32]              | GrnItemTex      |                                                                             |
-| STR[256]             | Descript        |                                                                             |
+| STR[256]             | Descript        | Item's Inventory description.                                               | 
 | WORD                 | UpEffect        |                                                                             |
 | STR[32]              | DropSnd         |                                                                             |
 | STR[32]              | EquSnd          |                                                                             |
