@@ -306,7 +306,7 @@ A quick Overview nOption on sDescription:
 |:---------:|:----------------------|
 |0          |My Character Name      |
 |1          |Other Character Names  |
-|2          |NPC Name               |
+|2          |NPC Name (does nothing)|
 |3          |Monster Name           |
 |4          |Drop Item Name         |
 |5          |My Character HP        |
@@ -325,7 +325,7 @@ A quick Overview nOption on sDescription:
 |18         |unknown                |
 |19         |Hide Chat Box          |
 |20         |unknown                |
-|21         |unknown                |
+|21         |NPC Name (linked: No 2)|
 |22         |Command Prompt         |
 |23         |unknown                |
 |24         |unknown                |
