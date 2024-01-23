@@ -299,40 +299,44 @@ Wether this GameOption should be applied on creation or not.
 
 sDescription:
 ```bash
-Description for the GameOption.
+Description of optionname.
 ```
-Meanings behind each OptionNo (on NA2016 files):
+A quick Overview nOption on sDescription:
 
-| nOptionNo  | Description            |
-|:----------:|:-----------------------|
-| 0          | My Character Name      |
-| 1          | Other Character Names  |
-| 2          | NPC Name               |
-| 3          | Monster Name           |
-| 4          | Drop Item Name         |
-| 5          | My Character HP        |
-| 6          | My Character SP(LP)    |
-| 7          | Interface              |
-| 8          | Chat Balloon           |
-| 9          | Name Tag Change        |
-| 10         | Tool Tip Pop Up        |
-| 11         | Play Guide             |
-| 12         | Whisper                |
-| 13         | Trade Request          |
-| 14         | Party Invite           |
-| 15         | Guild Invite           |
-| 16         | System Message         |
-| 17         | Confirmations          |
-| 18         | Unknown                |
-| 19         | Hide Chat Box          |
-| 20         | Unknown                |
-| 21         | Unknown                |
-| 22         | Command Prompt         |
-| 23         | Unknown                |
-| 24         | Unknown                |
-| 25         | Unknown                |
-| 26         | Unknown                |
-| 27         | Inventory Autostack    |
+|nOptionNo  | sDescription          |
+|:---------:|:----------------------|
+|0          |My Character Name      |
+|1          |Other Character Names  |
+|2          |NPC Name (does nothing)|
+|3          |Monster Name           |
+|4          |Drop Item Name         |
+|5          |My Character HP        |
+|6          |My Character SP(LP)    |
+|7          |Interface              |
+|8          |Chat Balloon           |
+|9          |Name Tag Change        |
+|10         |Tool Tip Pop Up        |
+|11         |Play Guide             |
+|12         |Whisper                |
+|13         |Trade Request          |
+|14         |Party Invite           |
+|15         |Guild Invite           |
+|16         |System Message         |
+|17         |Confirmations          |
+|18         |unknown                |
+|19         |Hide Chat Box          |
+|20         |unknown                |
+|21         |NPC Name (linked: No 2)|
+|22         |Command Prompt         |
+|23         |unknown                |
+|24         |unknown                |
+|25         |unknown                |
+|26         |unknown                |
+|27         |Inventory Autostack    |
+
+:::info
+although nOptionNo 2 and 21 are both changed on turning on and off NPC Name only 21 changes the actual option in game.
+:::
 
 
 ## Options Database
