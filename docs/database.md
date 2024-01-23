@@ -334,6 +334,11 @@ A quick Overview nOption on sDescription:
 |27         |Inventory Autostack    |
 
 
+:::info
+although nOptionNo 2 and 21 are both changed on turning on and off NPC Name only 21 changes the actual option in game.
+:::
+
+
 ## Options Database
 
 ### Auto_Account_Creation
