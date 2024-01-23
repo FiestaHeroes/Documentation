@@ -285,15 +285,16 @@ The timestamp of the last update. (not supposed to be changed)
 
 nDefaultValue:
 ```bash
-Enable or Disable given option on default character options.
+Default value on character creation for the given GameOption.
 
+Ex. for booleans (checkboxes on client):
 0 = Disabled.
 1 = Enabled.
 ```
 
 blsActive:
 ```bash
-TBD.
+Wether this GameOption should be applied on creation or not.
 ```
 
 sDescription:
@@ -332,7 +333,6 @@ A quick Overview nOption on sDescription:
 |25         |unknown                |
 |26         |unknown                |
 |27         |Inventory Autostack    |
-
 
 :::info
 although nOptionNo 2 and 21 are both changed on turning on and off NPC Name only 21 changes the actual option in game.
