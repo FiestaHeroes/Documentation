@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  docs:
+    image: cr.saze.me/fiesta-heroes/docs
+    build:
+      context: .
+      dockerfile: Dockerfile

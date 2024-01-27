@@ -1,0 +1,32 @@
+name: Deployment - Docker
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "The reason you're running this workflow"
+        required: true
+        default: "Manually triggered build"
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: [ self-hosted, cicd ]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: 'Print manual run reason'
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        echo 'Reason: ${{ github.event.inputs.reason }}'
+    - run: docker compose -f docker-compose.build.yml build
+    - run: docker compose -f docker-compose.build.yml push
+
+  deploy:
+    needs: build
+    runs-on: [ self-hosted, docker01 ]
+  
+    steps:
+    - name: Update containers
+      run: cd /data/fh-docs && docker compose pull && docker compose up -d
