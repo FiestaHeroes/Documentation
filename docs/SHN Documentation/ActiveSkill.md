@@ -114,3 +114,157 @@
 | BYTE                    | CannotInside     | Can be used on maps with ceilings or not                                                                                                                                                                                                                |
 | BYTE                    | DemandSoul       | The number of souls required to use the skill (Joker class only)                                                                                                                                                                                        |
 | WORD                    | HitID            | Hit time ID of skills with multi-hit attributes (MultyHitType.xls)                                                                                                                                                                                      |
+
+## Enums
+```bash
+typedef enum WeaponDemandType {
+    DT_ONEHAND=0,
+    DT_TWOHAND=1,
+    DT_ALL=2,
+    DT_WEAPON=3,
+    DT_HAMMER=4,
+    DT_MACE=5,
+    DT_NONE=6,
+    DT_SHIELD=7,
+    DT_BOW=8,
+    DT_CBOW=9,
+    DT_STAFF=10,
+    DT_WAND=11,
+    DT_CLAW=12,
+    DT_DSWORD=13,
+    DT_BLADE=14,
+    MAX_WEAPONDEMANDTYPE=15
+} WeaponDemandType;
+```
+```bash
+typedef enum TargetType {
+    TARGET_ENEMY=0,
+    TARGET_ME=1,
+    TARGET_PARTY=2,
+    TARGET_FRIEND=3,
+    TARGET_SPOT=4,
+    TARGET_ALL=5,
+    TARGET_GROUP=6,
+    TARGET_ENEMYUSER=7,
+    TARGET_EVERY=8,
+    TARGET_ENEMYGUILD=9,
+    TARGET_MYGUILD=10,
+    TARGET_MYNPC=11,
+    TARGET_MYRAID=12,
+    TARGET_BOX=13,
+    TARGET_THISACTION=14,
+    TARGET_ATTACKME=15,
+    TARGET_DAMAGEBYME=16,
+    TARGET_THISSKILL=17,
+    TARGET_NONE=18,
+    MAX_TARGETTYPE=19
+} TargetType;
+```
+```bash
+typedef enum TargetState {
+    TS_LIVE=0,
+    TS_CORPSE=1,
+    TS_NONE=2,
+    MAX_TARGETSTATE=3
+} TargetState;
+```
+```bash
+typedef enum SkillEffectType {
+    SE_PHYSICDAMAGE=0,
+    SE_MAGICDAMAGE=1,
+    SE_FIREDAMAGE=2,
+    SE_COLDDAMAGE=3,
+    SE_LIGHTNINGDAMAGE=4,
+    SE_HEALING=5,
+    SE_TELEPORT=6,
+    SE_REVIVAL=7,
+    SE_CURE=8,
+    SE_DISPEL=9,
+    SE_WHOLEHEAL=10,
+    SE_DEFAULT=11,
+    SE_VOLLEY=12,
+    SE_SUMMON=13,
+    SE_METAMORPHOSIS=14,
+    SE_PYRATEDAMAGE=15,
+    MAX_SKILLEFFECTTYPE=16
+} SkillEffectType;
+```
+```bash
+typedef enum SkillSpecial {
+    SS_NONE=0,
+    SS_HEALAMOUNT=1,
+    SS_CURE=2,
+    SS_DISPEL=3,
+    SS_TELEPORT=4,
+    SS_WHOLEHEALAMOUNT=5,
+    SS_MANABURN=6,
+    SS_UNDEADTODMG=7,
+    SS_DISPELALL=8,
+    SS_DISPELONE=9,
+    SS_THHPUP=10,
+    SS_DIEHPUP=11,
+    SS_REVIVAL=12,
+    SS_MAGICFIELD_TICK=13,
+    SS_MAGICFIELD_KEEP=14,
+    SS_STEALENCHANT=15,
+    SS_HPCONVERTSP=16,
+    SS_HPUPRATE=17,
+    SS_FLYDURINGCAST=18,
+    SS_SILVERWING=19,
+    SS_DISPELDEBUFF=20,
+    SS_DISPELCURSE=21,
+    SS_DISPELPOISON=22,
+    SS_DISPELDISEASE=23,
+    SS_WHOLEAGGRORATE=24,
+    SS_WARPING=25,
+    SS_DISPELRANDOM=26,
+    SS_DETECT=27,
+    SS_WHOLEAGGRORANGE=28,
+    SS_HIDE=29,
+    SS_Silience=30,
+    SS_MESMERIZE=31,
+    SS_SUMMON=32,
+    SS_METAMORPHOSIS=33,
+    SS_CROSSCOUNTER=34,
+    SS_DISPELDEEPER=35,
+    SS_DASH=36,
+    SS_DISPELBUFF=37,
+    SS_DASH2=38,
+    SS_HPRATE=39,
+    SS_CURSETIMEADD=40,
+    SS_FIRETIMEADD=41,
+    SS_HOLDME=42,
+    SS_JWALK=43,
+    SS_POSIONTIMEADD=44,
+    SS_SHOOTME=45,
+    SS_DMGCOLLTIMEDOWN=46,
+    SS_AREATYPE=47,
+    SS_BOMBDISPELALL=48,
+    SS_MAGICFIELDPARTY=49,
+    SS_HEALFRIENDRATE=50,
+    SS_SETABSTATEFRIEND=51,
+    SS_RANDOMTARGETNUMBER=52,
+    SS_NEXTTARGETAREA=53,
+    SS_DMGDOWNRATE=54,
+    SS_MAXDMGDOWNRATE=55,
+    SS_SHOTSPEED=56,
+    SS_TARGETHPDOWNDMGUPRATE=57,
+    SS_JUMP=58,
+    SS_SETABSTATEME=59,
+    SS_NOTTARGET=60,
+    SS_ABKEEPTIME=61,
+    SS_TOPAGGRONO=62,
+    SS_RANDOMTARGET=63,
+    SS_MAGICFIELD_DELAY_START_TIME=64,
+    SS_DISPELABSTATE=65,
+    SS_BMP_MAGICFIELD_ROTATIONSPEED_RIGHT=66,
+    SS_MOVE_CHR=67,
+    SS_HIDE_CHR_START=68,
+    SS_HIDE_CHR_END=69,
+    SS_RECALL=70,
+    SS_DMGSHARE=71,
+    SS_SUCKHP=72,
+    SS_RANDOMTARGETSPOT=73,
+    MAX_SKILLSPECIAL=74
+} SkillSpecial;
+```

@@ -9,3 +9,13 @@
 | INX["ActionType"] | eActionType     | Emotion classification type                                                                     |
 | DWORD             | nEventCode      | The event code of the animation to run                                                          |
 | DWORD             | nAfterCode      | The event code of the animation that will run and keep the animation (defaults to 0 if none)    |
+
+## Enums
+```bash
+typedef enum ActionType {
+    DEFAULT=0,
+    EMOTION=1,
+    CHARGED=2,
+    MAX_ACTIONTYPE=3
+} ActionType;
+```

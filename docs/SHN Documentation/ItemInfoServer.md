@@ -25,3 +25,44 @@
 | BYTE             | PK_KQ_USE              |                                                                                                    |
 | BYTE             | KQ_Item_Drop           |                                                                                                    |
 | BYTE             | PreventAttack          |                                                                                                    |
+
+## Enums
+```bash
+typedef enum ISEType {
+    ISET_NONEEQUIP=0,
+    ISET_MINIMON=1,
+    ISET_MINIMON_R=2,
+    ISET_MINIMON_BOTH=3,
+    ISET_COS_TAIL=4,
+    ISET_COS_BACK=5,
+    ISET_COS_RIGHT=6,
+    ISET_COS_LEFT=7,
+    ISET_COS_TWOHAND=8,
+    ISET_COS_HEAD=9,
+    ISET_COS_EYE=10,
+    ISET_COS_3PIECE_AMOR=11,
+    ISET_COS_3PIECE_PANTS=12,
+    ISET_COS_3PIECE_BOOTS=13,
+    ISET_COS_2PIECE_PANTS=14,
+    ISET_COS_1PIECE=15,
+    ISET_NORMAL_BOOTS=16,
+    ISET_NORMAL_PANTS=17,
+    ISET_RING=18,
+    ISET_SHIELD=19,
+    ISET_NORMAL_AMOR=20,
+    ISET_WEAPON_RIGHT=21,
+    ISET_WEAPON_TWOHAND=22,
+    ISET_WEAPON_LEFT=23,
+    ISET_EARRING=24,
+    ISET_NORMAL_HAT=25,
+    ISET_NECK=26,
+    ISET_COS_MASK=27,
+    ISET_INVINCIBLEHAMMER=28,
+    ISET_COS_MASK_EYE=29,
+    ISET_COS_HIDE_HEAD=30,
+    ISET_COS_EFF=31,
+    ISET_COS_SHIELD=32,
+    ISET_BRACELET=33,
+    MAX_ISETYPE=34
+} ISEType;
+```
