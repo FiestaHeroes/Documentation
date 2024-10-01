@@ -58,6 +58,11 @@ we highly recommend a minimum of 128GB for optimal performance.
 When installing Microsoft SQL Server, ensure that you have activated mixed mode. This is essential for setting up your server's configuration file later on.
 :::
 
+### YouTube - NA2016 Setup Example
+Here’s a brief example of how I configured a NA2016 file set using the default installation options for SQL and other settings using our guide below this video.
+
+[![Thumbnail](http://img.youtube.com/vi/mup7r9PRG0c/0.jpg)](https://www.youtube.com/watch?v=mup7r9PRG0c "FH: NA2016 - Quick Windows Server 2025 VM Setup")
+
 Verify that you have properly installed and configured Microsoft SQL Server before continuing.
 You can also utilize newer installations of Microsoft SQL Server, provided that the version is equal to or greater than the required version for your file set.
 You can obtain the installation files directly from the following links:
