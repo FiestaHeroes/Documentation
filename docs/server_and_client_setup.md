@@ -35,7 +35,7 @@ we highly recommend a minimum of 128GB for optimal performance.
 
 #### SQL Server and Management
 
-- [Microsoft SQL Server 2019](https://go.microsoft.com/fwlink/p/?linkid=866658)
+- [Microsoft SQL Server 2022](https://go.microsoft.com/fwlink/p/?linkid=2216019&clcid=0x409&culture=en-us&country=us)
 
 - [Microsoft SQL Server Management Studio](https://aka.ms/ssmsfullsetup)
 
@@ -89,6 +89,8 @@ Set-ExecutionPolicy Unrestricted -Force
 
 :::caution
 Our script ```_Install Databases.ps1``` **will only restore databases to the `C:/` drive by default**. Therefore, if your installation path is not ```C:\Program Files\Microsoft SQL Server```, you will need to [manually](#manual-setup) restore the databases.
+
+It is **strongly advised** that you use the specific SQL Server version listed in the [prerequisites](#prerequisites) section.
 :::
 
 :::danger
@@ -128,7 +130,8 @@ Options
 We **strongly** recommend that you keep the database names the original when restoring. There are specific [procedure](https://www.w3schools.com/sql/sql_stored_procedures.asp) edits that rely on these names, and changing them **will break** the functionality.
 :::
 
-Additionally, you will need to install the following services based on your chosen set:
+Additionally, you will need to install the following services based on your chosen set.
+**Right-click each of these executables and choose "Run as administrator"**:
 
 <Tabs groupId="fileset-full">
   <TabItem value="na" label="NA2016" default>
