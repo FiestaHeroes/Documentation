@@ -11,7 +11,7 @@
 | DWORD                | UseAbstateIndex |
 
 ## Enums
-```bash
+```cpp
 typedef enum UseEffectType {
     UE_HPUP=0,
     UE_SPUP=1,

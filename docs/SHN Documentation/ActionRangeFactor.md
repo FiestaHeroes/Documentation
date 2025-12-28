@@ -6,7 +6,7 @@
 | WORD                   | RangeEnd         | range end value                                                          |
 
 ## Enums
-```bash
+```cpp
 typedef enum ActionRangeType {
     HP_RATE_0_20=0,
     Lv_0_40=1,
@@ -19,7 +19,7 @@ typedef enum ActionRangeType {
     MAX_ACTIONRANGETYPE=8
 } ActionRangeType;
 ```
-```bash
+```cpp
 typedef enum RangeFactor {
     RF_HP_RATE=0,
     RF_HP_ABSOLUTE=1,

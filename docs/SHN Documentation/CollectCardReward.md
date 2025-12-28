@@ -7,7 +7,7 @@
 | WORD              | CC_RewardLot      | number of reward items |
 
 ## Enums
-```bash
+```cpp
 typedef enum CardReward {
     CR_ALL=0,
     CR_S=1,

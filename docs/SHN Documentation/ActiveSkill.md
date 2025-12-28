@@ -116,7 +116,7 @@
 | WORD                    | HitID            | Hit time ID of skills with multi-hit attributes (MultyHitType.xls)                                                                                                                                                                                      |
 
 ## Enums
-```bash
+```cpp
 typedef enum WeaponDemandType {
     DT_ONEHAND=0,
     DT_TWOHAND=1,
@@ -136,7 +136,7 @@ typedef enum WeaponDemandType {
     MAX_WEAPONDEMANDTYPE=15
 } WeaponDemandType;
 ```
-```bash
+```cpp
 typedef enum TargetType {
     TARGET_ENEMY=0,
     TARGET_ME=1,
@@ -160,7 +160,7 @@ typedef enum TargetType {
     MAX_TARGETTYPE=19
 } TargetType;
 ```
-```bash
+```cpp
 typedef enum TargetState {
     TS_LIVE=0,
     TS_CORPSE=1,
@@ -168,7 +168,7 @@ typedef enum TargetState {
     MAX_TARGETSTATE=3
 } TargetState;
 ```
-```bash
+```cpp
 typedef enum SkillEffectType {
     SE_PHYSICDAMAGE=0,
     SE_MAGICDAMAGE=1,
@@ -189,7 +189,7 @@ typedef enum SkillEffectType {
     MAX_SKILLEFFECTTYPE=16
 } SkillEffectType;
 ```
-```bash
+```cpp
 typedef enum SkillSpecial {
     SS_NONE=0,
     SS_HEALAMOUNT=1,

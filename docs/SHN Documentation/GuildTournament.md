@@ -105,7 +105,7 @@
 |            | WinScore | Guild Tournament Victory Points |
 
 ## Enums 
-```bash
+```cpp
 typedef enum TargetType {
     TARGET_ENEMY=0,
     TARGET_ME=1,

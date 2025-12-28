@@ -18,7 +18,7 @@
 | DWORD                       | Fame3   | Reputation given as a reward upon acquiring the title |
 
 ## Enums
-```bash
+```cpp
 typedef enum CHARACTER_TITLE_TYPE {
     ID_NONE=0,
     ID_EXP=1,
@@ -151,14 +151,14 @@ typedef enum CHARACTER_TITLE_TYPE {
     MAX_CHARACTER_TITLE_TYPE=128
 } CHARACTER_TITLE_TYPE;
 ```
-```bash
+```cpp
 typedef enum TitlePermitType {
     TPT_PERMIT=0,
     TPT_IMPOSSIBLE=1,
     MAX_TITLEPERMITTYPE=2
 } TitlePermitType;
 ```
-```bash
+```cpp
 typedef enum TitleRefreshType {
     TRT_REFRESH=0,
     TRT_KEEP=1,

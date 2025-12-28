@@ -17,7 +17,7 @@
 | DWORD                | AbsoluteSize   | Distance from the mob's center to the mob's outline (1000=Range50).|
 
 ## Enums
-```bash
+```cpp
 typedef enum WeaponTypeEnum {
     WT_NONE=0,
     WT_SWORD=1,
@@ -44,7 +44,7 @@ typedef enum WeaponTypeEnum {
     MAX_WEAPONTYPEENUM=22
 } WeaponTypeEnum;
 ```
-```bash
+```cpp
 typedef enum ArmorTypeEnum {
     AT_NONE=0,
     AT_CLOTH=1,

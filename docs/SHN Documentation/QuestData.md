@@ -21,7 +21,7 @@ Quest script identifiers for scenarios.
 | 27          | CLASS CHANGE  | 100   | Templar                  |
 
 Example:
-```bash
+```cpp
 ; Decision on a prestige class for a level 100 warrior.
 
 ; ID for QuestDialog.shn. Here's an example of how it might appear:

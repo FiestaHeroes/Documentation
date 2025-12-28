@@ -9,7 +9,7 @@
 | BYTE                 | Value         | In case of status abnormality, Strength is used, and in case of skill, it is used as 0                             |
 
 ## Enums
-```bash
+```cpp
 typedef enum TargetType {
     TARGET_ENEMY=0,
     TARGET_ME=1,
@@ -33,7 +33,7 @@ typedef enum TargetType {
     MAX_TARGETTYPE=19
 } TargetType;
 ```
-```bash
+```cpp
 typedef enum GTIActionType {
     GTIT_ACTISKILL=0,
     GTIT_ABSTATE=1,

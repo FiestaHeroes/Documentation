@@ -11,7 +11,7 @@
 | DWORD             | nAfterCode      | The event code of the animation that will run and keep the animation (defaults to 0 if none)    |
 
 ## Enums
-```bash
+```cpp
 typedef enum ActionType {
     DEFAULT=0,
     EMOTION=1,

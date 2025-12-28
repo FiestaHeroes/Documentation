@@ -93,7 +93,7 @@
 | BYTE                   | AutoMon             | 1 only for minimons with auto-pickup                               |
 
 ## Enums
-```bash
+```cpp
 typedef enum ItemTypeEnum {
     ITEMTYPE_EQU=0,
     ITEMTYPE_EXH=1,
@@ -105,7 +105,7 @@ typedef enum ItemTypeEnum {
     MAX_ITEMTYPEENUM=7
 } ItemTypeEnum;
 ```
-```bash
+```cpp
 typedef enum ItemClassEnum {
     ITEMCLASS_BYTELOT=0,
     ITEMCLASS_WORDLOT=1,
@@ -149,7 +149,7 @@ typedef enum ItemClassEnum {
     MAX_ITEMCLASSENUM=39
 } ItemClassEnum;
 ```
-```bash
+```cpp
 typedef enum ItemEquipEnum {
     ITEMEQUIP_NONE=0,
     ITEMEQUIP_HAT=1,
@@ -184,7 +184,7 @@ typedef enum ItemEquipEnum {
     MAX_ITEMEQUIPENUM=30
 } ItemEquipEnum;
 ```
-```bash
+```cpp
 typedef enum AuctionGroup {
     AG_ALL=0,
     AG_M_WEAPON=1,
@@ -232,7 +232,7 @@ typedef enum AuctionGroup {
     MAX_AUCTIONGROUP=43
 } AuctionGroup;
 ```
-```bash
+```cpp
 typedef enum WeaponTypeEnum {
     WT_NONE=0,
     WT_SWORD=1,
@@ -259,7 +259,7 @@ typedef enum WeaponTypeEnum {
     MAX_WEAPONTYPEENUM=22
 } WeaponTypeEnum;
 ```
-```bash
+```cpp
 typedef enum ArmorTypeEnum {
     AT_NONE=0,
     AT_CLOTH=1,
@@ -276,7 +276,7 @@ typedef enum ArmorTypeEnum {
     MAX_ARMORTYPEENUM=12
 } ArmorTypeEnum;
 ```
-```bash
+```cpp
 typedef enum GradeType {
     GT_NORMAL=0,
     GT_NAMED=1,
@@ -289,7 +289,7 @@ typedef enum GradeType {
     MAX_GRADETYPE=8
 } GradeType;
 ```
-```bash
+```cpp
 typedef enum ItemFuncEnum {
     ITEMFUNC_NONE=0,
     ITEMFUNC_ENDUREKIT_WC=1,

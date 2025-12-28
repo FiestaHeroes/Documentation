@@ -8,7 +8,7 @@
 | BYTE                   | StaStrength   | Strength to apply when EffectValue is abnormal                                             |
 
 ## Enums
-```bash
+```cpp
 typedef enum MHFO_EffectEnumerate {
     MHFO_EE_RECALL=0,
     MHFO_EE_ABSTATE=1,

@@ -16,7 +16,7 @@
 | DWORD                   | ActionArgD   | attribute value                                                               |
 
 ## Enums
-```bash
+```cpp
 typedef enum SubState {
     SUBAB_STRRATE=0,
     SUBAB_STRPLUS=1,
@@ -141,7 +141,7 @@ typedef enum SubState {
     MAX_SUBSTATE=120
 } SubState;
 ```
-```bash
+```cpp
 typedef enum SubAbstateAction {
     SAA_NONE=0,
     SAA_STRRATE=1,

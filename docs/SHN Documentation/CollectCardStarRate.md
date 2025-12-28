@@ -5,7 +5,7 @@
 | WORD                | CC_StarRate      | percentage      |
 
 ## Enums
-```bash
+```cpp
 typedef enum CardGrade {
     CG_S_GRADE=0,
     CG_A_GRADE=1,

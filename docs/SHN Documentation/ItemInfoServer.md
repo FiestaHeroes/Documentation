@@ -27,7 +27,7 @@
 | BYTE             | PreventAttack          |                                                                                                    |
 
 ## Enums
-```bash
+```cpp
 typedef enum ISEType {
     ISET_NONEEQUIP=0,
     ISET_MINIMON=1,

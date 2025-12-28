@@ -6,7 +6,7 @@
 | BYTE                        | Strength  | Strength of the condition to be applied |
 
 ## Enums
-```bash
+```cpp
 typedef enum CHARACTER_TITLE_TYPE {
     ID_NONE=0,
     ID_EXP=1,

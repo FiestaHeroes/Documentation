@@ -4,7 +4,7 @@
 | INX["CardMobGroupIndex"] | CC_CardMobGroup | Affiliated mob group  |
 
 ## Enums
-```bash
+```cpp
 typedef enum CardMobGroupIndex {
     MG_NONE=0,
     MG_ALKA=1,

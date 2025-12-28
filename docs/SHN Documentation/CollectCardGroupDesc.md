@@ -4,7 +4,7 @@
 | STR[64]                  | CC_MobGroupName | Affiliated mob group name |
 
 ## Enums
-```bash
+```cpp
 typedef enum CardMobGroupIndex {
     MG_NONE=0,
     MG_ALKA=1,

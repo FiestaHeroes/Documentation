@@ -19,7 +19,7 @@
 | STR[32]              | MainStateInx       | If the state abnormality consists of Main and Sub, insert this value of the Sub state abnormality into the Main state abnormality index. |
 | BYTE                 | Duplicate          | How many stacks are possible                                                                                                             |
 ## Enums
-```bash
+```cpp
 typedef enum ABSTATEINDEX {
     STA_SEVERBONE=0,
     STA_REDSLASH=1,
@@ -816,7 +816,7 @@ typedef enum ABSTATEINDEX {
     MAX_ABSTATEINDEX=792
 } ABSTATEINDEX;
 ```
-```bash
+```cpp
 typedef enum DispelAttr {
     DA_NONE=0,
     DA_GOOD=1,
@@ -833,7 +833,7 @@ typedef enum DispelAttr {
     MAX_DISPELATTR=12
 } DispelAttr;
 ```
-```bash
+```cpp
 typedef enum SubDispelAttr {
     SDA_NONE=0,
     SDA_STUN=1,

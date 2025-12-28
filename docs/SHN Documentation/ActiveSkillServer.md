@@ -23,7 +23,7 @@
 | INX["ActiveSkillGroupIndex"] | ActiveSkillGroupIndex | Group index to which the skill belongs                                  |
 
 ## Enums
-```bash
+```cpp
 typedef enum ActiveSkillGroupIndex {
     NONE=0,
     BattleBlow=1,

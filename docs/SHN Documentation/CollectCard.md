@@ -6,7 +6,7 @@
 | INX["CardMobGroupIndex"] | CC_CardMobGroup  | Affiliated mob group |
 
 ## Enums
-```bash
+```cpp
 typedef enum CardGrade {
     CG_S_GRADE=0,
     CG_A_GRADE=1,
@@ -15,7 +15,7 @@ typedef enum CardGrade {
     MAX_CARDGRADE=4
 } CardGrade;
 ```
-```bash
+```cpp
 typedef enum CardMobGroupIndex {
     MG_NONE=0,
     MG_ALKA=1,

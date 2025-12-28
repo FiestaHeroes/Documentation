@@ -5,7 +5,7 @@
 | INX["StateSetType"] | StateSet   | Whether or not the status ailment is canceled when entering the map or leaving the map |
 
 ## Enums
-```bash
+```cpp
 typedef enum StateSetType {
     SST_NOT_HERE=0,
     SST_SET_HERE=1,
