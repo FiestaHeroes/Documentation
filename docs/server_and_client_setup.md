@@ -233,10 +233,12 @@ If this server is configured as localhost, editing the file is not necessary. Si
   </TabItem>
   <TabItem value="global" label="LAN / Public">
 
-The following parameters must be edited: 
-- ```-i``` : The IP of the server you're connecting to.
-- ```-p``` : The login port of the server you are connecting to. By default, we use 9010 for all our sets.
+The following parameters must be edited:
 
+<ul>
+  <li><code>-i</code> : The IP of the server you're connecting to.</li>
+  <li><code>-p</code> : The login port of the server you are connecting to. By default, we use 9010 for all our sets.</li>
+</ul>
 
   </TabItem>
 
