@@ -90,6 +90,7 @@ class GeneralFunction():
 
     Args = []
     Rets = []
+    Overloads = []
 
     def Reset():
         GeneralFunction.Name = ""
@@ -99,6 +100,58 @@ class GeneralFunction():
         GeneralFunction.Def = ""
         GeneralFunction.Args.clear()
         GeneralFunction.Rets.clear()
+        GeneralFunction.Overloads.clear()
+
+def ParseAnnotation(line: str):
+    if line.startswith("---@param "):
+        temp = re.search(r"---@param\s+(\S+)\s+(\S+)(?:\s+(.*))?", line)
+        if temp:
+            GeneralFunction.Args.append([temp.group(1), temp.group(2)])
+        return True
+
+    if line.startswith("---@return "):
+        temp = re.search(r"---@return\s+(\S+)(?:\s+(.*))?", line)
+        if temp:
+            ret_name = temp.group(2) if temp.group(2) else "-"
+            GeneralFunction.Rets.append([ret_name, temp.group(1)])
+        return True
+
+    if line.startswith("---@overload "):
+        temp = re.search(r"---@overload\s+(.*)", line)
+        if temp:
+            GeneralFunction.Overloads.append(temp.group(1).strip())
+        return True
+
+    return False
+
+def FormatOverloadSignature(function_name: str, overload: str):
+    match = re.search(r"fun\((.*)\)(?::\s*(.*))?", overload)
+
+    if not match:
+        return overload
+
+    args = match.group(1)
+    ret = match.group(2)
+
+    signature = f"function {function_name}({args})"
+
+    if ret:
+        signature += f" -> {ret}"
+
+    return signature
+
+def FormatFunctionSignature(function_name: str, args, rets):
+    formatted_args = []
+
+    for arg in args:
+        formatted_args.append(f"{arg[0]}: {arg[1]}")
+
+    signature = f"function {function_name}({', '.join(formatted_args)})"
+
+    if len(rets) != 0:
+        signature += " -> " + ", ".join([ret[1] for ret in rets])
+
+    return signature
 
 def WriteGeneralFunctions(line: str):
 
@@ -108,13 +161,8 @@ def WriteGeneralFunctions(line: str):
         return
 
     if line.startswith("---@") and not line.startswith("---@deprecated"):
-
-        temp = re.search("---@(.*) (.*) (.*)", line)
-
-        if temp.group(1) == "param":
-            GeneralFunction.Args.append([f"{temp.group(2)}", f"{temp.group(3)}"])
-        else:
-            GeneralFunction.Rets.append([f"{temp.group(3)}", f"{temp.group(2)}"])
+        if ParseAnnotation(line):
+            return
         return
 
     if line.startswith("--- `"):
@@ -140,35 +188,14 @@ def WriteGeneralFunctions(line: str):
         if temp_desc != "":
             md_file.write(f"{ temp_desc }\n\n")
 
-        md_file.write("```lua  title='Definition'\n")
-        md_file.write(GeneralFunction.Def)
-        md_file.write("end\n")
+        md_file.write("```lua  title='Definitions'\n")
+        md_file.write(f"{FormatFunctionSignature(GeneralFunction.Name, GeneralFunction.Args, GeneralFunction.Rets)}\n")
+
+        if len(GeneralFunction.Overloads) != 0:
+            for overload in GeneralFunction.Overloads:
+                md_file.write(f"{FormatOverloadSignature(GeneralFunction.Name, overload)}\n")
+
         md_file.write("```\n\n")
-
-        if len(GeneralFunction.Args) != 0:
-            md_file.write("#### Arguments\n\n") 
-
-            md_file.write("| Name | Type |\n")
-            md_file.write("|------|------|\n")
-
-            for arg in GeneralFunction.Args:
-                for val in arg:       
-                    md_file.write(f"| {val} ")
-
-                md_file.write("|\n")
-
-        if len(GeneralFunction.Rets) != 0:
-                    md_file.write("#### Return values\n\n") 
-
-                    md_file.write("| Name | Type |\n")
-                    md_file.write("|------|------|\n")
-
-                    for arg in GeneralFunction.Rets:
-                        for val in arg:
-                            r = val.replace("|", "&#124;")
-                            md_file.write(f"| {r} ")
-
-                        md_file.write("|\n")
 
         md_file.write("\n")
 

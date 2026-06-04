@@ -200,7 +200,7 @@ end
 --- cActByEventCode(player, 101000)
 --- ```
 ---@param Handle number
----@param EventCode string
+---@param EventCode number 
 function cActByEventCode(Handle, EventCode)
 end
 
@@ -276,7 +276,7 @@ end
 ---
 --- cAIScriptFunc(Mob, "NPCClick", "OnNPCClicked" )
 --- ```
----@param Handle number|nil
+---@param Handle number
 ---@param ZoneEvent string
 ---@param CallBack string
 ---@return boolean|nil Success
@@ -295,10 +295,34 @@ end
 function cAIScriptSet(HandleTarget, Handle)
 end
 
-function cAnimate(Handle, AnimationName)
+--- Starts or stops an animation on the given object.
+--- `Action` must be either `"start"` or `"stop"`.
+--- When using `"start"`, an animation name can be passed as the third argument.
+---
+--- ```
+--- cAnimate(player, "start", "ActionProduct")
+--- cAnimate(player, "stop")
+--- ```
+---@overload fun(Handle: number, Action: "stop")
+---@param Handle number
+---@param Action "start"
+---@param AnimationName string
+function cAnimate(Handle, Action, AnimationName)
 end
 
-function cAnimateForcedly(Handle, AnimationName)
+--- Starts or stops an animation on the given object, forcing the animation state.
+--- `Action` must be either `"start"` or `"stop"`.
+--- When using `"start"`, an animation name can be passed as the third argument.
+---
+--- ```
+--- cAnimateForcedly(player, "start", "ActionProduct")
+--- cAnimateForcedly(player, "stop")
+--- ```
+---@overload fun(Handle: number, Action: "stop")
+---@param Handle number
+---@param Action "start"
+---@param AnimationName string
+function cAnimateForcedly(Handle, Action, AnimationName)
 end
 
 --- Writes a message to the server log.
@@ -315,7 +339,7 @@ end
 --- ```
 --- cCameraMove(Var["MapIndex"], 5838, 12883, 0, 30, 600, CAMERA_STATE.MOVING)
 --- ```
----@param MapInx number
+---@param MapInx string
 ---@param X number
 ---@param Y number
 ---@param AngleX number
@@ -406,7 +430,7 @@ end
 --- If the _SourceHandle_ parameter is not given, the damage is considered to be from the environment.\
 ---
 --- ```
---- cDamage(monster, 1000, player)
+--- cDamaged(monster, 1000, player)
 --- ```
 ---@param TargetHandle number
 ---@param Damage number
@@ -463,30 +487,19 @@ end
 function cDirectionalArrow(Handle, X, Y)
 end
 
---- Returns the distance between the object associated with the _Handle_ parameter and the object associated with the _TargetHandle_ parameter.\
+--- Returns the distance between two objects 
+--- Returns the distance between two coordinates.
 --- The distance is squared. Use the `math.sqrt` function to get the actual distance.\
 ---
 --- ```
---- local distance = cDistanceSquar(player, monster)
+--- local d1 = cDistanceSquar(player, monster)
+--- local d2 = cDistanceSquar(5000, 5000, 6000, 6000)
 --- ```
+---@overload fun(SourceX: number, SourceY: number, TargetX: number, TargetY: number): number|nil 
 ---@param Handle number
 ---@param TargetHandle number
 ---@return number|nil Distance
 function cDistanceSquar(Handle, TargetHandle)
-end
-
---- Returns the distance between two coordinates.\
---- The distance is squared. Use the `math.sqrt` function to get the actual distance.\
----
---- ```
---- local distance = cDistanceSquar(5000, 5000, 6000, 6000)
---- ```
----@param SourceX number
----@param SourceY number
----@param TargetX number
----@param TargetY number
----@return number|nil Distance
-function cDistanceSquar(SourceX, SourceY, TargetX, TargetY)
 end
 
 --- Open or close door. Valid values are "close" or "open".
@@ -647,15 +660,17 @@ end
 function cFieldScriptFunc(Map, Type, Function)
 end
 
---- Returns a list of mobs in the map associated with the _MapIndex_ parameter.\
+--- Returns a list of mob handles on the given map.\
+--- If `MobIndex` is provided, only mobs with that index are returned.
 ---
 --- ```
---- local mobList = { cFindMobList(Var["MapIndex"]) }
+--- local mobList = { cFindNearestMobList("Rou") }
+--- local slimes = { cFindNearestMobList("Rou", "Slime") }
 --- ```
----@param MapIndex number
----@param Handle number
+---@param MapIndex string
+---@param MobIndex? string
 ---@return number[]|nil MobList
-function cFindNearestMobList(MapIndex, Handle)
+function cFindNearestMobList(MapIndex, MobIndex)
 end
 
 --- Returns the handle of the nearest player to the object associated with the _Handle_ parameter.\
@@ -816,7 +831,7 @@ end
 --- Returns the InxName related to the _ItemNumber_ parameter.\
 ---
 --- ```
---- local itemInx = cGetItemInx(1)
+--- local itemInx = cGetItemIndex(1)
 --- ```
 ---@param ItemNumber number
 ---@return string|nil ItemInx
@@ -898,53 +913,44 @@ end
 function cGetMoveState(Handle)
 end
 
---- Returns the handle of the closest mob to the given coordinates on the map associated with the _MapIndex_ parameter.\
---- The _MobIndex_ parameter is the mob index of the mob to search for.\
---- The _Method_ parameter is the method of searching for the mob. In this case, it is `so_mobile_GetIdxName`.\
+--- Returns the handle of the closest matching object to the given coordinates on the map associated with the _MapIndex_ parameter.\
+--- Use `Method = "so_mobile_GetIdxName"` with a mob index string to search by mob index.\
+--- Use `Method = "so_ObjectType"` with an `ObjectType` value to search by object type.\
 ---
 --- ```
---- local mobHandle = cGetNearestMobByCoord(Var["MapIndex"], 5000, 5000, 1000, "Slime", "so_mobile_GetIdxName")
+--- local mobHandle = cGetNearestObjByCoord("Rou", 5000, 5000, 1000, "Slime", "so_mobile_GetIdxName")
+--- local playerHandle = cGetNearestObjByCoord("Rou", 5000, 5000, 1000, ObjectType.Player, "so_ObjectType")
 --- ```
----@param MapIndex number
+---@overload fun(MapIndex: string, X: number, Y: number, Radius: number, ObjectType: ObjectType, Method: "so_ObjectType"): number|nil
+---@param MapIndex string
 ---@param X number
 ---@param Y number
 ---@param Radius number
 ---@param MobIndex string
----@param Method string
----@return number|nil MobHandle
+---@param Method "so_mobile_GetIdxName"
+---@return number|nil Handle
 function cGetNearestObjByCoord(MapIndex, X, Y, Radius, MobIndex, Method)
 end
 
---- Returns the handle of the closest object to the given coordinates on the map associated with the _MapIndex_ parameter.\
---- The _ObjectType_ parameter is the type of object to search for.\
---- The _Method_ parameter is the method of searching for the object. In this case, it is `so_ObjectType`.\
+--- Returns a sorted list of object handles around the given coordinates.
+--- Results are ordered by nearest first.
+--- Use `SearchType = "so_ObjectType"` with an `ObjectType` value to search by object type.
+--- Use `SearchType = "so_mobile_GetIdxName"` with a mob index string to search by mob index.
+--- If `MaxObjects` is `0`, all matching objects are returned.
 ---
 --- ```
---- local mobHandle = cGetNearestObjByCoord(Var["MapIndex"], 5000, 5000, 1000, ObjectType["Player"], "so_ObjectType")
+--- local players = { cGetNearObjListByCoord("Rou", 5000, 5000, 1000, ObjectType.Player, "so_ObjectType", 5) }
+--- local slimes = { cGetNearObjListByCoord("Rou", 5000, 5000, 1000, "Slime", "so_mobile_GetIdxName", 10) }
 --- ```
----@param MapIndex number
----@param X number
----@param Y number
----@param Radius number
----@param ObjectType ObjectType
----@param Method string
----@return number|nil Handle
-function cGetNearestObjByCoord(MapIndex, X, Y, Radius, ObjectType, Method)
-end
-
---- Get a list of all objects in a radius around a coord.
----
---- ```
---- local players = { cGetNearObjListByCoord(Var["MapIndex"], 5000, 5000, 1000, ObjectType.Player, "so_ObjectType", 5 ) }
---- ```
----@param MapInx number
+---@overload fun(MapInx: string, X: number, Y: number, Range: number, MobIndex: string, SearchType: "so_mobile_GetIdxName", MaxObjects: number): number[]|nil
+---@param MapInx string
 ---@param X number
 ---@param Y number
 ---@param Range number
----@param ObjectType number
----@param SearchType string
+---@param ObjectType ObjectType
+---@param SearchType "so_ObjectType"
 ---@param MaxObjects number
----@return boolean|nil Success
+---@return number[]|nil ObjectList
 function cGetNearObjListByCoord(MapInx, X, Y, Range, ObjectType, SearchType, MaxObjects)
 end
 
@@ -1208,21 +1214,15 @@ end
 function cItemErase(MapIndex, ItemID)
 end
 
---- Kills mob instantly. Kill gets creditet to player.
----
---- ```
---- cKillObject(mobHandle, playerHandle)
---- ```
----@param Mob number
----@param Player number
-function cKillObject(Mob, Player)
-end
-
---- Kills mob instantly.
+--- Kills a mob instantly.
+--- If 'Player' is provided, the kill is credited to that player
 ---
 --- ```
 --- cKillObject(mobHandle)
+--- cKillObject(mobHandle, playerHandle)
 --- ```
+--- 
+---@overload fun(Mob: number, Player: number)
 ---@param Mob number
 function cKillObject(Mob)
 end
@@ -1611,30 +1611,21 @@ end
 function cObjectCount(MapINX, ObjectType)
 end
 
---- Returns the first object found within a radius of a specific object specified through the _Handle_ parameter.\
+--- Returns the first matching object within a radius of a handle.
+--- Use `Method = "so_ObjectType"` with an `ObjectType` value.
+--- Use `Method = "so_mobile_GetIdxName"` with a mob index string.
 ---
 --- ```
---- local foundObject = cObjectFind(mobHandle, 1000, ObjectType["PLAYER"], "so_ObjectType")
+--- local playerObj = cObjectFind(mobHandle, 1000, ObjectType.Player, "so_ObjectType")
+--- local helgaObj = cObjectFind(mobHandle, 1000, "BH_Helga", "so_mobile_GetIdxName")
 --- ```
+---@overload fun(Handle: number, Radius: number, MobIndex: string, Method: "so_mobile_GetIdxName"): number|nil
 ---@param Handle number
 ---@param Radius number
 ---@param ObjectType ObjectType
----@param Method string
+---@param Method "so_ObjectType"
 ---@return number|nil ObjectHandle
 function cObjectFind(Handle, Radius, ObjectType, Method)
-end
-
---- Returns the first mob found within a radius of a specific object specified through the _Handle_ parameter.\
----
---- ```
---- local foundMob = cObjectFind(mobHandle, 1000, "BH_Helga", "so_mobile_GetIdxName")
---- ```
----@param Handle number
----@param Radius number
----@param MobIndex string
----@param Method string
----@return number|nil MobHandle
-function cObjectFind(Handle, Radius, MobIndex, Method)
 end
 
 --- Returns the current HP and Max HP of an object.
@@ -1974,23 +1965,23 @@ end
 
 --- Opens up a server menu for a player.
 --- A server menu is a window like the one when entering a gate.
---- The YesFunction and NoFunction parameters are the functions that are called when the player clicks the Yes or No button.
---- The functions must be defined in the script.<br/>
---- The functions must have the following parameters:<br/>
---- `function YesFunction(NPCHandle, PlayerHandle, CharNo)`<br/>
---- `function NoFunction(NPCHandle, PlayerHandle, CharNo)`\
+--- After the title, the function accepts any number of button/function pairs.
+--- Each callback function must be defined in the script and has the following signature:
+--- `function Callback(NPCHandle, PlayerHandle, CharNo)`
 ---
 --- ```
 --- cServerMenu(player, npcHandle, "Do you want to leave?", "Yes", "LeaveDungeon", "No", "EmptyFunction")
+--- cServerMenu(player, npcHandle, "Choose an option", "Shop", "OpenShop", "Buff", "OpenBuffs", "Leave", "EmptyFunction")
 --- ```
+---@overload fun(PlayerHandle: number, NPCHandle: number, Title: string, Button1: string, Function1: string, Button2: string, Function2: string, ...): boolean|nil
 ---@param PlayerHandle number
 ---@param NPCHandle number
 ---@param Title string
----@param YesButton string
----@param YesFunction string
----@param NoButton string
----@param NoFunction string
-function cServerMenu(PlayerHandle, NPCHandle, Title, YesButton, YesFunction, NoButton, NoFunction)
+---@param Button1 string
+---@param Function1 string
+---@param ... string
+---@return boolean|nil Success
+function cServerMenu(PlayerHandle, NPCHandle, Title, Button1, Function1, ...)
 end
 
 --- Sets an Abstate on a Handle.
@@ -2012,9 +2003,9 @@ end
 --- cSetAbstate_Range(MobHandle, 1000, ObjectType.Mob, "StaImmortal", 1, 20000)
 --- ```
 ---@param Handle number
----@param Range string
+---@param Range number 
 ---@param ObjectType number
----@param Index number
+---@param Index string 
 ---@param Strength number
 ---@param KeepTime number
 ---@return boolean|nil Success
@@ -2081,9 +2072,9 @@ end
 --- Sets the script for the map.
 ---
 --- ```
---- cSetFieldScript(MapIndex, "ID/BH_Karen/BH_Karen_P")
+--- cSetFieldScript("Rou", "ID/BH_Karen/BH_Karen_P")
 --- ```
----@param Field number
+---@param Field string 
 ---@param Script string
 ---@return boolean|nil Success
 function cSetFieldScript(Field, Script)
@@ -2105,22 +2096,22 @@ end
 --- `CanRecovery` - Can recover HP<br/>
 ---
 --- ```
---- cSetMobAttr(mobHandle, "MobAggro", 1000)
+--- cSetMobAttr(mobHandle, "MobAggro", true)
 --- ```
 ---@param Handle number
 ---@param Attribute string
----@param Value number
+---@param Value boolean 
 ---@return boolean|nil Success
 function cSetMobAttr(Handle, Attribute, Value)
 end
 
---- Sets wether an NPC drops items or not.
+--- Sets wether an NPC drops items or not. 0 is false, every other number is true
 ---
 --- ```
---- cSetNPCIsItemDrop(npcHandle, false)
+--- cSetNPCIsItemDrop(npcHandle, 0)
 --- ```
 ---@param Handle number
----@param Enabled boolean
+---@param Enabled number 
 function cSetNPCIsItemDrop(Handle, Enabled)
 end
 
@@ -2247,7 +2238,7 @@ end
 --- ```
 ---@param Handle number
 ---@param Handle2 number
----@param SkillIndex number
+---@param SkillIndex string 
 function cSkillBlast(Handle, Handle2, SkillIndex)
 end
 
@@ -2363,7 +2354,7 @@ end
 --- ```
 --- cTimer(MapIndex, 600)
 --- ```
----@param Field number
+---@param Field string 
 ---@param Time number
 function cTimer(Field, Time)
 end
@@ -2379,12 +2370,14 @@ end
 function cTimer_Obj(Player, Delay)
 end
 
---- Ends timer for a specific player.\
----
+--- Ends a timer for a specific player or for all players on a map.\
+--- Pass a player handle to end that player's timer, or a map name to end the timer for everyone on the map.
 ---
 --- ```
---- cTimer(MapIndex, 600)
+--- cTimerEnd(player, 600)
+--- cTimerEnd("Rou", 600)
 --- ```
+---@overload fun(MapIndex: string, Delay: number)
 ---@param Player number
 ---@param Delay number
 function cTimerEnd(Player, Delay)
