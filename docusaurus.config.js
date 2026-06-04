@@ -8,7 +8,7 @@ const darkCodeTheme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Developer Documentation',
+    title: 'FH Docs',
     tagline: 'A public and well-organized resource for fiesta online development.',
     url: 'https://doc.fiestaheroes.com/',
     baseUrl: '/',
