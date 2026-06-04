@@ -1,15 +1,15 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 const lightCodeTheme = prismThemes.github;
 const darkCodeTheme = prismThemes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Documentation',
-    tagline: 'Providing a public and well-organized resource for guided development.',
+    title: 'Developer Documentation',
+    tagline: 'A public and well-organized resource for fiesta online development.',
     url: 'https://doc.fiestaheroes.com/',
     baseUrl: '/',
     onBrokenLinks: 'throw',
@@ -54,40 +54,37 @@ const config = {
     ],
 
     themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-        navbar: {
-            title: 'Fiesta Heroes',
-            logo: {
-                alt: 'Fiesta Heroes Logo',
-                src: 'img/favicon.png',
-            },
-            items: [/**{
+            navbar: {
+                title: 'Fiesta Heroes',
+                logo: {
+                    alt: 'Fiesta Heroes Logo',
+                    src: 'img/favicon.png',
+                },
+                items: [/**{
                     type: 'doc',
                     docId: 'intro',
                     position: 'left',
                     label: 'Doc',
                 },*/
-                {
-                    href: 'https://fiestaheroes.com/',
-                    label: 'Homepage',
-                    position: 'right',
-                },
-                {
-                    href: 'https://github.com/FiestaHeroes/Documentation',
-                    label: 'GitHub',
-                    position: 'right',
-                },
-            ],
-        },
-        footer: {
-            style: 'dark',
-            links: [{
+                    {
+                        href: 'https://fiestaheroes.com/',
+                        label: 'Homepage',
+                        position: 'right',
+                    },
+                    {
+                        href: 'https://github.com/FiestaHeroes/Documentation',
+                        label: 'GitHub',
+                        position: 'right',
+                    },
+                ],
+            },
+            footer: {
+                style: 'dark',
+                links: [{
                     title: 'Fiesta Heroes',
-                    items: [{
-                            label: 'Website',
-                            href: 'https://fiestaheroes.com/',
-                        },
+                    items: [
                         {
                             label: 'GitHub',
                             href: 'https://github.com/FiestaHeroes/',
@@ -101,20 +98,13 @@ const config = {
                 {
                     title: 'Community',
                     items: [{
-                        label: 'Fiesta Heroes Official Discord Server',
+                        label: 'Fiesta Heroes - Discord Server',
                         href: 'https://discord.gg/TCFzBPgtPX',
                     }],
                 },
                 {
                     title: 'Additional Resources',
-                    items: [{
-                            label: 'Fiesta Online Private Server Development Discord',
-                            href: 'https://discord.gg/m8NFFxSzPM',
-                        },
-                        {
-                            label: 'Fiesta Online Dev Discord',
-                            href: 'https://discord.gg/BUgGGgGUkh',
-                        },
+                    items: [
                         {
                             label: 'RageZone',
                             href: 'https://forum.ragezone.com/f591/',
@@ -125,15 +115,15 @@ const config = {
                         },
                     ],
                 },
-            ],
-            copyright: `Copyright © ${new Date().getFullYear()} FiestaHeroes Team.`,
-        },
-        prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme,
-            additionalLanguages: ['lua'],
-        },
-    }),
+                ],
+                copyright: `© ${new Date().getFullYear()} FiestaHeroes Team.`,
+            },
+            prism: {
+                theme: lightCodeTheme,
+                darkTheme: darkCodeTheme,
+                additionalLanguages: ['lua'],
+            },
+        }),
 };
 
 module.exports = config;

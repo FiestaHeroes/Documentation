@@ -7,7 +7,7 @@ const FeatureList = [
     title: 'Development',
     description: (
       <>
-        Our goal is to provide the best foundation for creating your own server. We are dedicated to developing, maintaining, and fixing any retail or base content within our sets.
+        We provide the best foundation for creating your own server. We are dedicated to developing, maintaining, and fixing any retail and base content within our sets.
       </>
     ),
   },
@@ -25,7 +25,7 @@ const FeatureList = [
     title: 'Archive',
     description: (
       <>
-        Furthermore, we are also hosting our own archive, where we store official content from over the years, such as images, articles, videos, clients, tools, and more.
+        We also host our own archive, where we store official content from over the years, such as images, articles, videos, clients, tools, and more.
       </>
     ),
   },
