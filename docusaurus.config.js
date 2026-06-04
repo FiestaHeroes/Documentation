@@ -13,8 +13,13 @@ const config = {
     url: 'https://doc.fiestaheroes.com/',
     baseUrl: '/',
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.png',
+
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        }
+    },
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
