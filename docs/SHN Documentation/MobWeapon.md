@@ -1,6 +1,6 @@
-| MobWeapon |
+| MobWeapon |                 |                                |                                                                                                               |
 | --------- | --------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| DWORD           | ID                             |                                                                                                               | A unique value given to each monster. |
+| DWORD     | ID              |                                | A unique value given to each monster.                                                                         |
 | STR[33]   | InxName         |                                | Monster unique index in English. No spaces.                                                                   |
 | STR[32]   | Skill           |                                |                                                                                                               |
 | WORD      | AtkSpd          | actual attack cycle            | If the server sends this value, the client plays the animation according to this value.                       |
